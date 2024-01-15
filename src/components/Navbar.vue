@@ -82,13 +82,13 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../scss/mixing";
+
     .navbar {
+        @include setFlex(space-between, center);
         width: 97.5%;
         height: 10%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         border-bottom: 2px solid var(--vt-c-black);
         margin: 0 1.25%;
         margin-bottom: 1rem;
@@ -99,10 +99,8 @@
         background-color: var(--vt-c-black);
     }
     .home {
+        @include setFlex(center, center);
         width: fit-content;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         height: 130%;
         padding: 1rem 2rem;
         background-color: var(--vt-c-black);
@@ -118,9 +116,7 @@
         color: var(--vt-c-black);
     }
     ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include setFlex(center, center);
         flex-direction: row;
         height: 100%;
     }
@@ -138,9 +134,7 @@
             width: 97.5%;
             height: 10%;
             min-height: 10%;
-            justify-content: flex-start;
-            flex-direction: column;
-            align-items: flex-start;
+            @include setFlex(flex-start, flex-start, column);
             border-bottom: 2px solid var(--vt-c-black);
             background-color: white;
             transition: height 0.3s ease-in-out, min-height 0.3s ease-in-out;
@@ -154,9 +148,7 @@
             top: 0;
             left: 0;
             width: fit-content;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include setFlex(center, center);
             height: 100%;
             padding: 1rem 2rem;
             transition: none;

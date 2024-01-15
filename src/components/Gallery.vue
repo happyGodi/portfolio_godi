@@ -30,7 +30,9 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../scss/mixing";
+
     ::-webkit-scrollbar {
         background-color: var(--vt-c-black);
         width: 10px;
@@ -48,10 +50,7 @@
         
     }
      .gallery {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: column;
+        @include setFlex(flex-start, center, column);
         width: 100%;
         min-width: 100%;
         height: 90%;
@@ -84,7 +83,7 @@
         font-size: 164px;
         font-weight: bold;
         font-family: glympsePeriyotman;
-        filter: invert();
+        filter: invert(100%);
         z-index: 1;
         mix-blend-mode: difference;
     }
