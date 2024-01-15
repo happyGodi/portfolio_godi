@@ -1,0 +1,44 @@
+[
+    {
+        "name": "English",
+        "code": "En",
+        "default": true,
+        "home": "Home",
+        "greeting": "Ohya!",
+        "names":"I'm Godi Godi, i'm a web developper!",
+        "description": "I'm a young web developper specialized in web applications using mostly VueJs. Most people knows me as Godi Godi and as you can see, i'm also a graphic artist. I've made some cool personal projects and artworks.",
+        "gallery": "GALLERY",
+        "next": "And also,",
+        "artistNames": "I'm a Graphic artist, named HappyGodi.",
+        "hello": "Ohya!",
+        "welcome": "Welcome!"
+    },
+    {
+        "name": "Francais",
+        "code": "Fr",
+        "default": false,
+        "home": "Acceuil",
+        "greeting": "Bonjour!",
+        "names":"Je suis Godi Godi, je suis développeur web!",
+        "description": "Je suis un jeune développeur web spécialisé sur VueJs. La plupart des gens me connaissent en tant que Godi Godi bien que ce n'est qu'une partie de mon prénom et comme vous pouvez le voir, je suis aussi artiste graphique. J'ai réalisé quelques et aussi beaucoup d'oeuvre ",
+        "gallery": "GALLERIE",
+        "next": "Et aussi,",
+        "artistNames": "Je suis Artiste graphique, nommé HappyGodi.",
+        "hello": "Bonjour!",
+        "welcome": "Bienvenue!"
+    },
+    {
+        "name": "Malagasy",
+        "code": "Mlg",
+        "default": false,
+        "home": "Fandraisana",
+        "greeting": "Salama eh!",
+        "names":"Izaho no Godi Godi, izaho dia développeur web!",
+        "description": "Izaho dia développeur web amin'ny VueJs. Fantatry ny olona amin'ny anarana hoe Godi Godi aho na dia ampahany amin'ny tena anarako aza izany ary araky ny hitanao dia artiste graphique ihany koa aho. Nanatanteraka asa sy asa tanana maromaro aho.",
+        "gallery": "TRANO FAMPIRATIANA",
+        "next": "Nefa koa,",
+        "artistNames": "Artiste graphique ny tenako, mitondra ny anarana HappyGodi.",
+        "hello": "Salame eh!",
+        "welcome": "Tongasoa!"
+    }
+]

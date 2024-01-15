@@ -1,0 +1,60 @@
+<script setup lang="ts">
+    import Navbar from './Navbar.vue';
+    import { useDarkModeStore } from '@/stores/darkMode';
+    import { useLoadingScreen } from '@/stores/loadingScreen';
+    import { computed } from 'vue';
+    import { onBeforeMount, onMounted } from 'vue';
+    import LoadingScreen from './LoadingScreen.vue';
+
+    const darkModeStore = useDarkModeStore()
+    const loader = useLoadingScreen()
+    const isDark = computed<boolean>(() => darkModeStore.isDark)
+    
+    onBeforeMount(() => {
+        loader.startLoading()
+    })
+
+    onMounted(() => {
+         setTimeout(() => {
+            loader.stopLoading()
+        }, 6000);
+    })
+
+</script>
+
+<template>
+    <div :class="['landing', {landingDark: isDark}]">
+        <Transition name="fade">
+            <LoadingScreen/>
+        </Transition>
+        <Navbar/>
+        <RouterView></RouterView>
+    </div>
+</template>
+
+<style scoped>
+    .landing {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem 1.25%;
+        position: relative;
+        transition: background-color 0.2s linear;
+    }
+    .landingDark {
+        background-color: var(--vt-c-black);
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.2s linear;
+    }
+    .fade-enter-from {
+        opacity: 0;
+    }
+    .fade-leave-to {
+        opacity: 0;
+    }
+</style>

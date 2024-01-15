@@ -1,0 +1,112 @@
+[
+    {
+        "code": "En",
+        "cards": [
+            {
+                "cardName": "World Of Games",
+                "description": "It was my first ever web application. Done for a college project when i was in second year, i did the full backend and front end developement using a web framework for the front and Sql for database.",
+                "tools": "VueJs (2), NodeJs, Express, Mysql, Sequelize, Bootstrap",
+                "path" : "world_of_game.jpg"
+            },
+            {
+                "cardName": "My Portfolio",
+                "description": "This is my actual portfolio for showcasing my skills in web developpement and UI/UX design and also my artistic skill. I've mainly used just one tool and one language for it as it was for learning and practicing more on both tools and my frontend skiil basically.",
+                "tools": "VueTs (3), TypeScript",
+                "path" : "porsche.jpg"
+            },
+            {
+                "cardName": "To Do",
+                "description": "People said if you learn a new framework, do a To Do app first with it so here we are. I had quite some fun learning and creating this app with Angular in its 15th version.",
+                "tools": "Angular",
+                "path" : "angular_to_do.jpg"
+            },
+            {
+                "cardName": "MEDD website refont",
+                "description": "This is a UI project that i made for college in third year. The goal was just to re-create the Environment and Sustainable Development Ministery's website and make it better looking and easy to go through.",
+                "tools": "Figma",
+                "path" : "men_website_refont.png"
+            },
+            {
+                "cardName": "M5 legacy",
+                "description": "This is one of my favorite piece ever. It was dedicated to all the M5 lovers around the world. I made a small drawing of all the BMW M5 since the e28 till the f90 on an A3 size bristol paper.",
+                "tools": "Pens, gouaches, fine liners, pencils, colored pencils, 310g bristol paper",
+                "path" : "m5_legacy.jpg"
+            }
+        ]
+    },
+    {
+        "code": "Fr",
+        "cards": [
+            {
+                "cardName": "World Of Games",
+                "description": "C'était ma toute première application web. Dans le cadre des mes études universitaire en deuxième année, j'avais réalisé le tout, du backend au front end en utilisant un framework web pour le frontend et Sql pour la base de donnée",
+                "tools": "VueJs (2), NodeJs, Express, Mysql, Sequelize, Bootstrap",
+                "path" : "world_of_game.jpg"
+            },
+            {
+                "cardName": "Mon Portfolio",
+                "description": "C'est mon portfolio actuel pour montrer mes différentes abilités en design, conception d'application web et également le côté artistique. Je n'ai utilisé principalement qu'une seule technologie pour ce projet pour apprendre plus sur ce framework que j'adore et pratiquer mes abilité de développement frontend.",
+                "tools": "VueTs (3), TypeScript",
+                "path" : "porsche.jpg"
+            },
+            {
+                "cardName": "To Do",
+                "description": "Il est commun de dire que pour apprendre un nouveau framework, on fait d'abord une application To Do avec. C'était assez amusant d'apprendre le framework Angular dans sa version 15.",
+                "tools": "Angular",
+                "path" : "angular_to_do.jpg"
+            },
+            {
+                "cardName": "Redesign site web du MEDD",
+                "description": "C'était un projet de design lors de ma troisième année universitaire. L'objectif était de faire un nouveau design du site web du Ministère de l'Environement et du Développement Durable pour avoir un meilleur design et une mailleur prise en main du site par les utilisateurs.",
+                "tools": "Figma",
+                "path" : "men_website_refont.png"
+            },
+            {
+                "cardName": "M5 legacy",
+                "description": "C'est tout simplement une de mes oeuvres favorite. C'est un peu une dédicace à tout les passionnées de M5 dans le monde. J'avais fait de petit dessin de toute les modèles de BMW M5 depuis la e28 jusqu'à la f90 sur du papier bristol au format A3",
+                "tools": "Stylos, gouaches, liners, crayon couleur, papier bristol 310g",
+                "path" : "m5_legacy.jpg"
+            }
+            
+        ]
+    },
+    {
+        "code": "Mlg",
+        "cards": [
+            {
+                "cardName": "World Of Games",
+                "description": "desc1",
+                "tools": "VueJs (2), NodeJs, Express, Mysql, Sequelize, Bootstrap",
+                "path" : "world_of_game.jpg"
+            },
+            {
+                "cardName": "Portfolio",
+                "description": "desc1",
+                "tools": "VueTs (3), TypeScript",
+                "path" : "porsche.jpg"
+            },
+            {
+                "cardName": "To Do",
+                "description": "desc1",
+                "tools": "Angular",
+                "path" : "angular_to_do.jpg"
+            },
+            {
+                "cardName": "Fanavaozana trano-kala MEDD",
+                "description": "desc1",
+                "tools": "Figma",
+                "path" : "men_website_refont.jpg"
+            },
+            {
+                "cardName": "Mlg",
+                "description": "desc1",
+                "tools": "Penina, gouaches, liners, crayon couleur, taratasy bristol 310g",
+                "path" : "m5_legacy.jpg"
+            }
+           
+        ]
+    }
+   
+   
+   
+]
