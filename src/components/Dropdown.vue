@@ -32,13 +32,13 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../scss/mixing";
+
     .sub-item {
+        @include setFlex(center, center);
         width: 100%;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         position: relative;
     }
     .active-item {

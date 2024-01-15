@@ -32,15 +32,14 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../scss/mixing";
+
     .landing {
         position: relative;
         width: 100vw;
         height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+        @include setFlex(center, center, column);
         padding: 1rem 1.25%;
         position: relative;
         transition: background-color 0.2s linear;
