@@ -21,7 +21,9 @@
     </Transition>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../scss/mixing";
+
     .loadingScreen {
         width: 100vw;
         height: 100vh;
@@ -29,17 +31,13 @@
         top: 0;
         left: 0;
         z-index: 20;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        @include setFlex(center, flex-start);
         padding: 0rem;
         flex-direction: row;
         transition: opacity 0.5s linear, pointer-events 0.5s linear;
     }
     .loadingContent {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include setFlex(center, center);
         width: 100%;
         height: 100%;
         background-color:  var(--vt-c-black);

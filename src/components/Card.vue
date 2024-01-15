@@ -35,7 +35,9 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../scss/mixing";
+
   ::-webkit-scrollbar {
         background-color: var(--vt-c-black);
         width: 5px;
@@ -54,15 +56,12 @@
         
     }
     .card {
+        @include setFlex(flex-start, flex-start, column);
         width: 300px;
         height: calc(450px - 1rem);
         margin: 1rem;
         background-color: white;
         color: var(--vt-c-black);
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: column;
         position: relative;
         transition: all 0.35s ease-in-out;
         border: 12px solid rgb(189, 189, 189);
@@ -82,17 +81,14 @@
     }
 
     .picture_scale {
-        filter: grayscale();
+        filter: grayscale(100%);
     }
     .project {
         position: absolute;
         bottom: 0%;
         left: 50%;
         transform: translateX(-50%) ;
-        display: flex;
-        flex-direction: row;                                                                              
-        justify-content: space-between;
-        align-items: center;
+        @include setFlex(space-between, center);
         width: 100%;
         height: 20%;
         max-height: 60%;
@@ -104,9 +100,7 @@
         
     }
     .project_name {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        @include setFlex(flex-start, center);
         text-align: justify;
         width: 30%;
         height: calc(100% - 15px);
