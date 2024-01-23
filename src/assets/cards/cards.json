@@ -5,7 +5,7 @@
             {
                 "cardName": "Fine and Lite",
                 "description": "Simple inspiration from one of my friend using two tone.",
-                "path" : "duo_tone.jpg"
+                "path" : "dual_tone.jpg"
             },
             {
                 "cardName": "Red Splash",
@@ -13,19 +13,19 @@
                 "path" : "red_spalsh.jpg"
             },
             {
+                "cardName": "Calm and chill",
+                "description": "Made at first for training, It ended up to be one of my best and favorite.",
+                "path" : "cutness.jpg"
+            },
+            {
                 "cardName": "Carole and her miata",
                 "description": "No matter the question, the answer is always miata. My OC (Original Character) with her car a NA Miata.",
-                "path" : "miata.png"
+                "path" : "miata.jpg"
             },
             {
                 "cardName": "Beauty in nature",
                 "description": "A Porsche 911 under some cherry blossom. beautifull scenary.",
-                "path" : "porsche_cherry_blossom.jpg"
-            },
-            {
-                "cardName": "Calm and chill",
-                "description": "Made at first for training, It ended up to be one of my best and favorite.",
-                "path" : "cutness.jpg"
+                "path" : "porsche.jpg"
             }
         ]
     },
