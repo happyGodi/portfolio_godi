@@ -51,10 +51,8 @@
     }
      .gallery {
         @include setFlex(flex-start, center, column);
-        width: 100vw;
-        min-width: 100%;
-        height: 90%;
-        padding: 1rem 1.25%;
+        width: 100%;
+        height: 100%;
         position: relative;
     }
      .gallery::before {

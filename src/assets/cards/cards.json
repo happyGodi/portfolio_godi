@@ -3,34 +3,29 @@
         "code": "En",
         "cards": [
             {
-                "cardName": "World Of Games",
-                "description": "It was my first ever web application. Done for a college project when i was in second year, i did the full backend and front end developement using a web framework for the front and Sql for database.",
-                "tools": "VueJs (2), NodeJs, Express, Mysql, Sequelize, Bootstrap",
-                "path" : "world_of_game.jpg"
+                "cardName": "Fine and Lite",
+                "description": "Simple inspiration from one of my friend using two tone.",
+                "path" : "duo_tone.jpg"
             },
             {
-                "cardName": "My Portfolio",
-                "description": "This is my actual portfolio for showcasing my skills in web developpement and UI/UX design and also my artistic skill. I've mainly used just one tool and one language for it as it was for learning and practicing more on both tools and my frontend skiil basically.",
-                "tools": "VueTs (3), TypeScript",
-                "path" : "porsche.jpg"
+                "cardName": "Red Splash",
+                "description": "Curly hair in a photo style shot illustration using exposing red color",
+                "path" : "red_spalsh.jpg"
             },
             {
-                "cardName": "To Do",
-                "description": "People said if you learn a new framework, do a To Do app first with it so here we are. I had quite some fun learning and creating this app with Angular in its 15th version.",
-                "tools": "Angular",
-                "path" : "angular_to_do.jpg"
+                "cardName": "Carole and her miata",
+                "description": "No matter the question, the answer is always miata. My OC (Original Character) with her car a NA Miata.",
+                "path" : "miata.png"
             },
             {
-                "cardName": "MEDD website refont",
-                "description": "This is a UI project that i made for college in third year. The goal was just to re-create the Environment and Sustainable Development Ministery's website and make it better looking and easy to go through.",
-                "tools": "Figma",
-                "path" : "men_website_refont.png"
+                "cardName": "Beauty in nature",
+                "description": "A Porsche 911 under some cherry blossom. beautifull scenary.",
+                "path" : "porsche_cherry_blossom.jpg"
             },
             {
-                "cardName": "M5 legacy",
-                "description": "This is one of my favorite piece ever. It was dedicated to all the M5 lovers around the world. I made a small drawing of all the BMW M5 since the e28 till the f90 on an A3 size bristol paper.",
-                "tools": "Pens, gouaches, fine liners, pencils, colored pencils, 310g bristol paper",
-                "path" : "m5_legacy.jpg"
+                "cardName": "Calm and chill",
+                "description": "Made at first for training, It ended up to be one of my best and favorite.",
+                "path" : "cutness.jpg"
             }
         ]
     },
