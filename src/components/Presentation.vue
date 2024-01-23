@@ -2,8 +2,8 @@
     import { ref, computed, onMounted } from 'vue';
     import { useDarkModeStore } from '@/stores/darkMode';
     import { useLanguages } from '@/stores/languages';
-    import Gallery from './Gallery.vue';
-import { RouterLink } from 'vue-router';
+    import Card from './Card.vue';
+    import { RouterLink } from 'vue-router';
 
     const darkModeStore = useDarkModeStore()
     const languages = useLanguages()
@@ -12,6 +12,7 @@ import { RouterLink } from 'vue-router';
     const buttonIconOnHoverColor = computed<string>(() => darkModeStore.buttonIconOnHoverColor)
     const buttonIconOnHoverColorInverted = computed<string>(() => darkModeStore.buttonIconOnHoverColorInverted)
     const isDark = computed<boolean>(() => darkModeStore.isDark)
+    const cardList = computed<any>(() => languages.defaultCardList.cards)
 
     function lightColor() {
         darkModeStore.lightColor()
@@ -21,11 +22,9 @@ import { RouterLink } from 'vue-router';
     }
     function lightColorReversed() {
         darkModeStore.lightColorReversed()
-        console.log("light hover")
     }
     function resetColorReversed() {
         darkModeStore.resetColorReversed()
-        console.log("light out")
     }
     onMounted(() => {
         resetColor()
@@ -52,48 +51,48 @@ import { RouterLink } from 'vue-router';
                 <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ selectedLang.next }}</h1>
                 <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ selectedLang.artistNames }}</h1>
                 <p :class="['description', {description_dark: isDark}]">{{ selectedLang.artDescription}}</p>
-                <RouterLink to="/gallery" :class="[isDark ? 'gallery_dark' : 'gallery']" :onMouseenter="lightColorReversed" :onMouseleave="resetColorReversed">
+                <button :class="[isDark ? 'gallery_dark' : 'gallery']" :onMouseenter="lightColorReversed" :onMouseleave="resetColorReversed">
                     {{ selectedLang.gallery }}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" :width="iconSize" :height="iconSize">
                         <path d="M29.84375 13.09375C29.066406 13.167969 28.402344 13.691406 28.148438 14.429688C27.890625 15.171875 28.089844 15.992188 28.65625 16.53125L35.125 23L10 23C9.9375 22.996094 9.875 22.996094 9.8125 23C8.707031 23.050781 7.855469 23.988281 7.90625 25.09375C7.957031 26.199219 8.894531 27.050781 10 27L35.125 27L28.625 33.46875C27.839844 34.253906 27.839844 35.527344 28.625 36.3125C29.410156 37.097656 30.683594 37.097656 31.46875 36.3125L41.34375 26.40625L42.78125 25L41.34375 23.59375L31.46875 13.6875C31.046875 13.253906 30.449219 13.035156 29.84375 13.09375Z" 
                             :fill="buttonIconOnHoverColorInverted" />
                     </svg>
-                </RouterLink>
+                </button>
             </div>
         </div>
-        <div class="gallery">
-            <div class="showroom">
-                <Gallery/>
+        <div :class="['showroom', { showroom_dark: isDark}]">
+            <h1 class="showroom_title">{{ selectedLang.gallery }}</h1>
+            <div class="cards">
+                <div class="slider" v-for="(c, index) in cardList" :key="index">
+                    <Card
+                        :name="c.cardName"
+                        :path="c.path"
+                        :description="c.description"
+                        :selectedId="index"
+                    />
+                    <h4>{{ c.cardName }}</h4>
+                </div>
             </div>
         </div>
-    </div>
-   <!--  <div class="landing_content">
-        <div class="presentation">
-            <div :class="['content_left', { content_left_dark: isDark}]">
-                <h1 :class="['left_title', {left_title_dark: isDark}]">{{ selectedLang.greeting }}</h1>
-                <h1 :class="['left_title', {left_title_dark: isDark}]">{{ selectedLang.names}}</h1>
-                <p :class="['description', {description_dark: isDark}]">{{ selectedLang.description}}</p>
-                <RouterLink to="/gallery" :class="[isDark ? 'gallery_dark' : 'gallery']" :onMouseenter="lightColor" :onMouseleave="resetColor">
-                    {{ selectedLang.gallery }}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" :width="iconSize" :height="iconSize">
-                    <path d="M29.84375 13.09375C29.066406 13.167969 28.402344 13.691406 28.148438 14.429688C27.890625 15.171875 28.089844 15.992188 28.65625 16.53125L35.125 23L10 23C9.9375 22.996094 9.875 22.996094 9.8125 23C8.707031 23.050781 7.855469 23.988281 7.90625 25.09375C7.957031 26.199219 8.894531 27.050781 10 27L35.125 27L28.625 33.46875C27.839844 34.253906 27.839844 35.527344 28.625 36.3125C29.410156 37.097656 30.683594 37.097656 31.46875 36.3125L41.34375 26.40625L42.78125 25L41.34375 23.59375L31.46875 13.6875C31.046875 13.253906 30.449219 13.035156 29.84375 13.09375Z" 
-                        :fill="buttonIconOnHoverColor" />
-                    </svg>
-                </RouterLink>
-            </div>
-            <div :class="['content_right', { content_right_dark: isDark}]">
-                <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ selectedLang.next }}</h1>
-                <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ selectedLang.artistNames }}</h1>
-            </div>
-        </div>
-    </div> -->
-      
-   
+    </div>   
 </template>
 
 <style lang="scss" scoped>
 @import "../scss/_mixing.scss";
 @import "../assets/fonts/fonts.css";
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--vt-c-grey-soft);
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: var(--vt-c-black);
+        border-radius: 5px;
+        
+    }
 
     .landing_page {
         /*justify-content*, align-items
@@ -110,7 +109,7 @@ import { RouterLink } from 'vue-router';
             @include setFlex(flex-start, center);
             width: 100%;
             height: 90%;
-            margin-bottom: 5%;
+            margin-bottom: 1rem;
 
             .content_left {
                 @include setFlex(center, flex-start, column);
@@ -249,17 +248,88 @@ import { RouterLink } from 'vue-router';
             }
         }
 
-        .gallery {
+        .showroom {
             position: relative;
-            @include setFlex(flex-start, center);
+            @include setFlex(flex-start, center, column);
             width: 100%;
-            height: 90%;
+            height: 100%;
+            padding: 1rem 1.25%;
 
-            .showroom {
-                @include setFlex(flex-start, center);
-                width: 100%;
-                height: 100vh;
+            .showroom_title {
+                width: fit-content;
+                height: fit-content;
+                padding: 0.5rem 2rem;
+                margin: 0.5rem;
+                font-size: 164px;
+                font-weight: bold;
+                font-family: glympsePeriyotman;
+                filter: invert(100%);
+                mix-blend-mode: difference;
+                z-index: 1;
             }
+
+            .cards {
+                @include setFlex(flex-start, center, row);
+                width: calc((300px *4) + (1rem *8));
+                height: fit-content;
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding: 1rem;
+                .slider{
+                    @include setFlex(flex-start, center, column);
+                    h4 {
+                        width: fit-content;
+                        height: fit-content;
+                        padding: 3px;
+                        font-size: 21px;
+                        filter: invert(100%);
+                        mix-blend-mode: difference;
+                        transition: font-size 0.25s ease-in-out, cursor 0.25s ease-in-out;
+                        position: relative;
+                        z-index: 1;
+                        transition: all 0.25s linear;
+                        overflow: hidden;
+                    }
+                    h4:hover{
+                        cursor: pointer;
+                    }
+                    h4::after {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        bottom: 0;
+                        transition-duration: 0.25s;
+                        height: 2px;
+                        z-index: -1;
+                        background-color: white;
+                        filter: invert(100%);
+                        mix-blend-mode: difference;
+                    }
+                    h4:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .showroom::before {
+            content: "";
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 50%;
+            height: 100%;
+            background-color: var(--vt-c-black);
+        }
+        .showroom_dark::before {
+            content: "";
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 50%;
+            height: 100%;
+            background-color: white;
         }
     }
     
