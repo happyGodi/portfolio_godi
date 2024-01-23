@@ -37,10 +37,9 @@
 
     .landing {
         position: relative;
-        width: 100vw;
-        height: 100vh;
-        @include setFlex(center, center, column);
-        padding: 1rem 1.25%;
+        width: 100%;
+        height: 100%;
+        @include setFlex(flex_start, center, column);
         position: relative;
         transition: background-color 0.2s linear;
     }

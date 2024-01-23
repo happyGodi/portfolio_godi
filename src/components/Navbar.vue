@@ -93,6 +93,7 @@
         margin: 0 1.25%;
         margin-bottom: 1rem;
         z-index: 10;
+        background-color: white;
     }
     .navbarDark {
         border-bottom: 2px solid var(--vt-c-white-low);
