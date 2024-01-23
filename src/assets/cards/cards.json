@@ -26,6 +26,21 @@
                 "cardName": "Beauty in nature",
                 "description": "A Porsche 911 under some cherry blossom. beautifull scenary.",
                 "path" : "porsche.jpg"
+            },
+            {
+                "cardName": "Deep Purple",
+                "description": "Lately, the 911 992 Porsche turbo S has gain the reputation as a monster. A more scary illustration with the purple color",
+                "path" : "992_turbo.jpg"
+            },
+            {
+                "cardName": "Katheryn",
+                "description": "Some instant inspiration from Katheryn as a model.",
+                "path" : "katheryn.jpg"
+            },
+            {
+                "cardName": "Lightning fast",
+                "description": "A real track monster made by McLaren which has became my favorite supercar.",
+                "path" : "senna.jpg"
             }
         ]
     },
