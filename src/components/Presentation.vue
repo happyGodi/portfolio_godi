@@ -4,6 +4,7 @@
     import { useLanguages } from '@/stores/languages';
     import Card from './Card.vue';
     import { RouterLink } from 'vue-router';
+    import Footer from './Footer.vue'
 
     const darkModeStore = useDarkModeStore()
     const languages = useLanguages()
@@ -15,6 +16,11 @@
     const cardList = computed<any>(() => languages.defaultCardList.cards)
     let active = ref(false)
     let currentId = ref(null)
+
+    onMounted(() => {
+        resetColor()
+        resetColorReversed()
+    })
 
     function lightColor() {
         darkModeStore.lightColor()
@@ -35,10 +41,6 @@
     function notHover() {
         active.value = false
     }
-    onMounted(() => {
-        resetColor()
-        resetColorReversed()
-    })
 </script>
 
 <template>
@@ -60,16 +62,16 @@
                 <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ selectedLang.next }}</h1>
                 <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ selectedLang.artistNames }}</h1>
                 <p :class="['description', {description_dark: isDark}]">{{ selectedLang.artDescription}}</p>
-                <button :class="[isDark ? 'gallery_dark' : 'gallery']" :onMouseenter="lightColorReversed" :onMouseleave="resetColorReversed">
+                <a href="#gallery" :class="[isDark ? 'gallery_dark' : 'gallery']" :onMouseenter="lightColorReversed" :onMouseleave="resetColorReversed">
                     {{ selectedLang.gallery }}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" :width="iconSize" :height="iconSize">
                         <path d="M29.84375 13.09375C29.066406 13.167969 28.402344 13.691406 28.148438 14.429688C27.890625 15.171875 28.089844 15.992188 28.65625 16.53125L35.125 23L10 23C9.9375 22.996094 9.875 22.996094 9.8125 23C8.707031 23.050781 7.855469 23.988281 7.90625 25.09375C7.957031 26.199219 8.894531 27.050781 10 27L35.125 27L28.625 33.46875C27.839844 34.253906 27.839844 35.527344 28.625 36.3125C29.410156 37.097656 30.683594 37.097656 31.46875 36.3125L41.34375 26.40625L42.78125 25L41.34375 23.59375L31.46875 13.6875C31.046875 13.253906 30.449219 13.035156 29.84375 13.09375Z" 
                             :fill="buttonIconOnHoverColorInverted" />
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
-        <div :class="['showroom', { showroom_dark: isDark}]">
+        <div id="gallery" :class="['showroom', { showroom_dark: isDark}]">
             <h1 class="showroom_title">{{ selectedLang.gallery }}</h1>
             <div class="cards">
                 <div class="slider" v-for="(c, index) in cardList" :key="index" ref="cardRef">
@@ -85,6 +87,7 @@
                 </div>
             </div>
         </div>
+        <Footer/>
     </div>   
 </template>
 
