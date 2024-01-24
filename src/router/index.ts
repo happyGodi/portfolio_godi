@@ -15,11 +15,6 @@ const router = createRouter({
           path: '',
           name: 'presentation',
           component: PresentationVue
-        },
-        { 
-          path: 'gallery',
-          name: 'gallery',
-          component: GalleryVue
         }
       ] 
     },
