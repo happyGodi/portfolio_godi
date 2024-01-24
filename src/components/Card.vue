@@ -2,29 +2,21 @@
     import { ref, computed } from 'vue';
     import cards from "../assets/cards/cards.json"
 
-    let current = ref(false)
     const cardList: Array<any> = cards
 
     defineProps<{
         name: string,
         path: string,
         selectedId: number,
-        description: string
+        description: string,
     }>()
 
-    function hovering(id: Number | undefined): void {
-        for (let i = 0; i <= cardList.length + 1; i++) {
-            if (i == id) current.value = true
-        }  
-    }
-    function notHover() {
-        current.value = false
-    }
+   
 </script>
 
 <template>
-    <div class="card" @mouseenter="hovering(selectedId)" @mouseleave="notHover" >
-        <img :src="'src/assets/artworks/' + path" :alt="name" :class="[ {picture_scale : !current}, 'picture']" >
+    <div class="card" >
+        <img :src="'src/assets/artworks/' + path" :alt="name" :class="['picture']" >
     </div>
 </template>
 
@@ -57,10 +49,6 @@
         color: var(--vt-c-black);
         position: relative;
         transition: all 0.35s ease-in-out;
-        border: 12px solid rgb(189, 189, 189);
-    }
-    .card:hover {
-        transform: scale(1.05);
     }
     .picture {
         width: 100%;
@@ -73,9 +61,7 @@
         transition: filter 0.35s ease-in-out, transform 0.35s ease-in-out;
     }
 
-    .picture_scale {
-        filter: grayscale(100%);
-    }
+    
     @media screen and (max-width: 1280px) {
         .card {
             width: 250px;

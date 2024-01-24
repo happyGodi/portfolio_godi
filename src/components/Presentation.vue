@@ -13,6 +13,8 @@
     const buttonIconOnHoverColorInverted = computed<string>(() => darkModeStore.buttonIconOnHoverColorInverted)
     const isDark = computed<boolean>(() => darkModeStore.isDark)
     const cardList = computed<any>(() => languages.defaultCardList.cards)
+    let active = ref(false)
+    let currentId = ref(null)
 
     function lightColor() {
         darkModeStore.lightColor()
@@ -25,6 +27,13 @@
     }
     function resetColorReversed() {
         darkModeStore.resetColorReversed()
+    }
+    function hovering(id: any): void {
+        active.value = true
+        currentId.value = id
+    }
+    function notHover() {
+        active.value = false
     }
     onMounted(() => {
         resetColor()
@@ -63,8 +72,10 @@
         <div :class="['showroom', { showroom_dark: isDark}]">
             <h1 class="showroom_title">{{ selectedLang.gallery }}</h1>
             <div class="cards">
-                <div class="slider" v-for="(c, index) in cardList" :key="index">
+                <div class="slider" v-for="(c, index) in cardList" :key="index" ref="cardRef">
                     <Card
+                        @mouseenter="hovering(index)" @mouseleave="notHover" 
+                        :class="['card', { shrink : (active && (currentId != index))}, { grow : (active && (currentId == index))}]"
                         :name="c.cardName"
                         :path="c.path"
                         :description="c.description"
@@ -310,6 +321,19 @@
                     h4:hover::after {
                         width: 100%;
                     }
+
+                    .card {
+                        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+                        border: 12px solid rgb(189, 189, 189);
+                    }
+                    .shrink {
+                        transform: scale(0.9);
+                        filter: grayscale(100%) blur(3px);
+                    }
+                    .grow {
+                        transform: scale(1.1);
+                    }
+
                 }
             }
         }
