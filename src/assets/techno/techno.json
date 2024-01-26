@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Vue",
+        "desc": "",
+        "path": "vue.png"
+    },
+    {
+        "name": "TypeScript",
+        "desc": "",
+        "path": "typescript.png"
+    },
+    {
+        "name": "JavsScript",
+        "desc": "",
+        "path": "javascript.png"
+    },
+    {
+        "name": "Sass/Scss",
+        "desc": "",
+        "path": "sass.png"
+    },
+    {
+        "name": "Html 5",
+        "desc": "",
+        "path": "html.png"
+    },
+    {
+        "name": "Css 3",
+        "desc": "",
+        "path": "css.png"
+    },
+    {
+        "name": "Express Js",
+        "desc": "",
+        "path": "express.png"
+    },
+    {
+        "name": "Node Js",
+        "desc": "",
+        "path": "nodeJs.png"
+    },
+    {
+        "name": "Less",
+        "desc": "",
+        "path": "less.png"
+    },
+    {
+        "name": "MongoDB",
+        "desc": "",
+        "path": "mongodb.png"
+    },
+    {
+        "name": "MySQL",
+        "desc": "",
+        "path": "mysql.png"
+    },
+    {
+        "name": "Adobe Photoshop",
+        "desc": "",
+        "path": "photoshop.png"
+    },
+    {
+        "name": "Adobe Illustrator",
+        "desc": "",
+        "path": "illustrator.png"
+    },
+    {
+        "name": "Clip Studio Paint",
+        "desc": "",
+        "path": "csp.png"
+    },
+    {
+        "name": "MedibangPaint Pro",
+        "desc": "",
+        "path": "medibangpaint.png"
+    }
+]

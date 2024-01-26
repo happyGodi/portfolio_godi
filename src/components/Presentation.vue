@@ -5,6 +5,7 @@
     import Card from './Card.vue';
     import { RouterLink } from 'vue-router';
     import Footer from './Footer.vue'
+    import Techno from './Techno.vue'
 
     const darkModeStore = useDarkModeStore()
     const languages = useLanguages()
@@ -87,6 +88,7 @@
                 </div>
             </div>
         </div>
+        <Techno/>
         <Footer/>
     </div>   
 </template>

@@ -29,20 +29,5 @@
         "artistNames": "Je suis Artiste graphique, nommé HappyGodi.",
         "hello": "Bonjour!",
         "welcome": "Bienvenue!"
-    },
-    {
-        "name": "Malagasy",
-        "code": "Mlg",
-        "default": false,
-        "home": "Fandraisana",
-        "greeting": "Salama eh!",
-        "names":"Izaho no Godi Godi, izaho dia développeur Front-end VueJs.",
-        "description": "Izaho dia développeur web amin'ny VueJs. Fantatry ny olona amin'ny anarana hoe Godi Godi aho na dia ampahany amin'ny tena anarako aza izany ary araky ny hitanao dia artiste graphique ihany koa aho. Nanatanteraka asa sy asa tanana maromaro aho.",
-        "gallery": "TRANO FAMPIRATIANA",
-        "projetc": "asa",
-        "next": "Nefa koa,",
-        "artistNames": "Artiste graphique ny tenako, mitondra ny anarana HappyGodi.",
-        "hello": "Salame eh!",
-        "welcome": "Tongasoa!"
     }
 ]
