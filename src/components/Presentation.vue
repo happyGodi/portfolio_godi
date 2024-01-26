@@ -95,7 +95,7 @@
 
 <style lang="scss" scoped>
 @import "../scss/_mixing.scss";
-@import "../assets/fonts/fonts.css";
+@import "../scss/variables";
 
     ::-webkit-scrollbar {
         display: none;
@@ -125,6 +125,7 @@
             @include setFlex(flex-start, center);
             width: 100%;
             height: 90%;
+            min-height: 90vh;
             margin-bottom: 1rem;
 
             .content_left {
@@ -229,9 +230,9 @@
                     outline: none;
                     width: fit-content;
                     height: fit-content;
-                    border: 1px solid white;
-                    background-color: white;
-                    color: var(--vt-c-black);
+                    border: 1px solid $white;
+                    background-color: $white;
+                    color: $dark;
                     padding: 0.5rem 1rem;
                     transition: all 0.2s linear;
                     transition-property: background-color, color;
@@ -266,9 +267,10 @@
 
         .showroom {
             position: relative;
-            @include setFlex(flex-start, center, column);
+            @include setFlex(center, center, column);
             width: 100%;
             height: 100%;
+            min-height: calc(100vh - 2rem);
             padding: 1rem 1.25%;
 
             .showroom_title {
