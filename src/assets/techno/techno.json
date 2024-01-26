@@ -2,76 +2,91 @@
     {
         "name": "Vue",
         "desc": "",
+        "link": "https://vuejs.org/",
         "path": "vue.png"
     },
     {
         "name": "TypeScript",
         "desc": "",
+        "link": "https://www.typescriptlang.org/docs/",
         "path": "typescript.png"
     },
     {
         "name": "JavsScript",
         "desc": "",
+        "link": "https://developer.mozilla.org/fr/docs/Web/JavaScript",
         "path": "javascript.png"
     },
     {
         "name": "Sass/Scss",
         "desc": "",
+        "link": "https://sass-lang.com/documentation/",
         "path": "sass.png"
     },
     {
         "name": "Html 5",
         "desc": "",
+        "link": "https://developer.mozilla.org/fr/docs/Web/HTML",
         "path": "html.png"
     },
     {
         "name": "Css 3",
         "desc": "",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
         "path": "css.png"
     },
     {
         "name": "Express Js",
         "desc": "",
+        "link": "https://devdocs.io/express/",
         "path": "express.png"
     },
     {
         "name": "Node Js",
         "desc": "",
+        "link": "https://nodejs.org/docs/latest/api/",
         "path": "nodeJs.png"
     },
     {
         "name": "Less",
         "desc": "",
+        "link": "https://lesscss.org/",
         "path": "less.png"
     },
     {
         "name": "MongoDB",
         "desc": "",
+        "link": "https://www.mongodb.com/docs/",
         "path": "mongodb.png"
     },
     {
         "name": "MySQL",
         "desc": "",
+        "link": "https://dev.mysql.com/doc/",
         "path": "mysql.png"
     },
     {
         "name": "Adobe Photoshop",
         "desc": "",
+        "link": "https://helpx.adobe.com/photoshop/user-guide.html",
         "path": "photoshop.png"
     },
     {
         "name": "Adobe Illustrator",
         "desc": "",
+        "link": "https://helpx.adobe.com/illustrator/user-guide.html",
         "path": "illustrator.png"
     },
     {
         "name": "Clip Studio Paint",
         "desc": "",
+        "link": "https://help.clip-studio.com/en-us/First_Topic.html",
         "path": "csp.png"
     },
     {
         "name": "MedibangPaint Pro",
         "desc": "",
+        "link": "https://medibangpaint.com/en/",
         "path": "medibangpaint.png"
     }
 ]

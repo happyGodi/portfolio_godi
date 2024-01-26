@@ -1,20 +1,27 @@
 <script setup lang="ts">
     import techno from '../assets/techno/techno.json'
+    import { ref } from 'vue';
 
     const techs: Array<any> = techno
+    const iconSize = ref(24)
 </script>
 
 <template>
     <div class="techno">
         <h1 class="title">Softwares, Language & tools</h1>       
         <ul class="tech_list" v-for="(t, index) in techs" :key="index">
+            <span class="line"></span>
             <li :class="['tech_el', { tech_el_even : ((index % 2) != 0)}]">
             <div class="picture">
                 <img :src="'src/assets/icons/' + t.path" :alt="t.name">
             </div>
+            <div :class="['box', { box_even : ((index % 2) != 0)}]">
+                <a :href="t.link" target="_blank" class="link">Read<br>docs?</a>
+            </div>
                 <div class="tech_el_desc">
                     <h4>{{ t.name }}</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, quos quae. Beatae dicta possimus similique explicabo nesciunt, aperiam id minima.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, quos quae. Beatae dicta possimus similique explicabo nesciunt, aperiam id minima.
+                    </p>
                 </div>
             </li>
         </ul> 
@@ -43,20 +50,56 @@
             list-style-type: none;
             width: 50%;
             height: fit-content;    
-            padding: 2rem 1rem;       
+            padding: 2rem 1rem;     
+            position: relative;
+            
+            .line {
+                position: absolute;
+                width: 2px;
+                height: 100%;
+                left: 50%;
+                top: 0%;
+                transform: translate(-50%);
+                background-color: $dark;
+                border-radius: 2px;
+            }
             
             .tech_el {
                 @include setFlex(flex-start, center, column);
-                width: fit-content;
-                max-width: 300px;
-                height: fit-content;
-                min-height: 350px;
+                width: 300px;
+                height: 400px;
                 overflow: hidden;
                 position: relative;
                 box-shadow: 0px 5px 10px $soft-grey;
                 background-color: $dark;
                 color: $white;
 
+                .box {
+                    width: fit-content;
+                    position: absolute;
+                    bottom: 45%;
+                    right: 0;
+                    z-index: 3;
+                    background-color: $fushia;
+                    
+                    .link {
+                            @include setFlex(flex-start, center);
+                            width: 100%;
+                            height: 100%;
+                            padding: 6px;
+                            background-color: transparent;
+                            color: $white;
+                            font-size: 14px;
+                            position: relative;
+                            transition: cursor 0.25s ease-in-out;
+                        }
+                        .link:hover {
+                            cursor: pointer;
+                        }
+                }
+                .box_even {
+                    left: 0;
+                }
                 .picture {
                     @include setFlex(center, center);
                     width: 100%;
@@ -80,17 +123,18 @@
 
                     h4 {
                         width: fit-content;
-                        height: fit-content;
+                        height: 10%;
                         padding: 6px;
                         margin-bottom: 12px;
                         font-size: 18px;
                         font-weight: bold;
                     }
                     p {
-                        width: 60%;
-                        min-height: 150px;
+                        width: 65%;
+                        height: 60%;
                         font-size: 14px;
                         text-align: center;
+                        margin: 1rem;
                     }
                 }
             }

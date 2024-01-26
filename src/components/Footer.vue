@@ -68,7 +68,7 @@
 
 <style scoped lang="scss">
 @import "../scss/_mixing.scss";
-@import "../assets/fonts/fonts.css";
+@import "../scss/variables";
 
     .footer {
         @include setFlex(center, space-evenly);

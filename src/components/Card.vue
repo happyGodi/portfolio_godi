@@ -21,7 +21,8 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../scss/mixing";
+@import "../scss/_mixing.scss";
+@import "../scss/variables";
 
   ::-webkit-scrollbar {
         background-color: var(--vt-c-black);
