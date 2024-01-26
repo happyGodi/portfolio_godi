@@ -79,44 +79,5 @@
             }
             
         ]
-    },
-    {
-        "code": "Mlg",
-        "cards": [
-            {
-                "cardName": "World Of Games",
-                "description": "desc1",
-                "tools": "VueJs (2), NodeJs, Express, Mysql, Sequelize, Bootstrap",
-                "path" : "world_of_game.jpg"
-            },
-            {
-                "cardName": "Portfolio",
-                "description": "desc1",
-                "tools": "VueTs (3), TypeScript",
-                "path" : "porsche.jpg"
-            },
-            {
-                "cardName": "To Do",
-                "description": "desc1",
-                "tools": "Angular",
-                "path" : "angular_to_do.jpg"
-            },
-            {
-                "cardName": "Fanavaozana trano-kala MEDD",
-                "description": "desc1",
-                "tools": "Figma",
-                "path" : "men_website_refont.jpg"
-            },
-            {
-                "cardName": "Mlg",
-                "description": "desc1",
-                "tools": "Penina, gouaches, liners, crayon couleur, taratasy bristol 310g",
-                "path" : "m5_legacy.jpg"
-            }
-           
-        ]
     }
-   
-   
-   
 ]
