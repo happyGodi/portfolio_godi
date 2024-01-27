@@ -4,3 +4,12 @@
     align-items: $align-item;
     flex-direction: $flex-direction;
 }
+
+@mixin backgroundImage($url) {
+    background-image: url($url);
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat-y;
+    width: 100%;
+    height: auto;
+}

@@ -10,7 +10,6 @@
     <div class="techno">
         <h1 class="title">Softwares, Language & tools</h1>       
         <ul class="tech_list" v-for="(t, index) in techs" :key="index">
-            <span class="line"></span>
             <li :class="['tech_el', { tech_el_even : ((index % 2) != 0)}]">
             <div class="picture">
                 <img :src="'src/assets/icons/' + t.path" :alt="t.name">
@@ -20,7 +19,7 @@
             </div>
                 <div class="tech_el_desc">
                     <h4>{{ t.name }}</h4>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, quos quae. Beatae dicta possimus similique explicabo nesciunt, aperiam id minima.
+                    <p> {{ t.desc }}
                     </p>
                 </div>
             </li>
@@ -34,6 +33,7 @@
 
     .techno {
         @include setFlex(flex-start, center, column);
+        @include backgroundImage("../assets/background/techno_bg.png");
         width: 100%;
         height: fit-content;
         padding: 3rem 1rem;
@@ -52,17 +52,7 @@
             height: fit-content;    
             padding: 2rem 1rem;     
             position: relative;
-            
-            .line {
-                position: absolute;
-                width: 2px;
-                height: 100%;
-                left: 50%;
-                top: 0%;
-                transform: translate(-50%);
-                background-color: $dark;
-                border-radius: 2px;
-            }
+    
             
             .tech_el {
                 @include setFlex(flex-start, center, column);
@@ -80,16 +70,17 @@
                     bottom: 45%;
                     right: 0;
                     z-index: 3;
-                    background-color: $fushia;
-                    
+                    background-color: $white;
+                   
                     .link {
                             @include setFlex(flex-start, center);
                             width: 100%;
                             height: 100%;
                             padding: 6px;
                             background-color: transparent;
-                            color: $white;
+                            color: $dark;
                             font-size: 14px;
+                            font-weight: bold;
                             position: relative;
                             transition: cursor 0.25s ease-in-out;
                         }
