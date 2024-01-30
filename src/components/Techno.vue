@@ -135,4 +135,66 @@
         }
         
     }
+
+    @media screen and (max-width: 1280px) {
+        .techno{
+            .tech_list {
+                    width: 60%;   
+                    padding: 1rem;
+
+                    .tech_el {
+                        width: 250px;
+                        height: 350px;
+                        .picture {
+                            height: 30%;
+                        }
+                        .tech_el_desc {
+                            @include setFlex(center, center, column);
+                            height: 70%;
+                            h4 {
+                                margin-bottom: 12px;
+                            }
+                            p {
+                                width: 65%;
+                                height: 60%;
+                                font-size: 12px;
+                                margin: 0.5rem;
+                            }
+                        }
+                    }
+                }
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        .techno{
+
+            .tech_list {
+                    width: 80%;   
+                    padding: 1rem;
+                }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .techno{
+            .title {
+                font-size: 24px;
+            }
+            .tech_list {
+                @include setFlex(center, center, row);
+                    width: 100%;   
+                    padding: 0.5rem;
+                    flex-wrap: wrap;
+                    flex: 1 1 center;
+                }
+                .tech_el_even {
+                    margin:auto;
+                }
+                .picture {
+                    height: 30%;
+                }
+                .tech_el_desc {
+                    height: 70%;
+                }
+        }
+    }
 </style>

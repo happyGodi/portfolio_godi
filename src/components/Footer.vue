@@ -86,6 +86,7 @@
             height: 250px;
             padding: 1rem 2rem;
             margin: 1rem;
+            position: relative;
 
             h4 {
                 font-size: 18px;
@@ -97,6 +98,20 @@
         }
         .infos:hover {
             cursor: pointer;
+        }
+        .infos::after {
+            content: "";
+            width: 0;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.25s ease-in-out;
+            background-color: $white;
+        }
+        .infos:hover::after {
+            width: 60%;
         }
     }
     .footer_dark {
@@ -110,6 +125,10 @@
                 width: 250px;
                 height: 250px;
                 padding: 0.5rem 1rem;
+
+                h4 {
+                    font-size: 14px;
+                }
             }
         }
     }

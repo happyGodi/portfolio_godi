@@ -65,12 +65,6 @@
     
     @media screen and (max-width: 1280px) {
         .card {
-            width: 250px;
-            height: calc(350px - 1rem);
-        }
-    }
-    @media screen and (max-width: 1024px) {
-        .card {
             width: 200px;
             height: calc(300px - 1rem);
         }
@@ -78,7 +72,7 @@
     @media screen and (max-width: 768px) {
         .card {
             width: 300px;
-            height: calc(450px - 1rem);
+            height: calc(400px - 1rem);
         }
     }
 </style>
