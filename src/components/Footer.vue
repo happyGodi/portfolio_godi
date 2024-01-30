@@ -77,11 +77,13 @@
         padding: 5rem 1rem;
         background-color: var(--vt-c-black);
         color: white;
+        flex-wrap: wrap;
+        flex: 1 1 center;
 
         .infos {
             @include setFlex(center, center, column);
-            width: fit-content;
-            height: fit-content;
+            width: 300px;
+            height: 250px;
             padding: 1rem 2rem;
             margin: 1rem;
 
@@ -90,11 +92,26 @@
                 width: fit-content;
                 height: fit-content;
                 padding: 6px;
+                text-align: center;
             }
+        }
+        .infos:hover {
+            cursor: pointer;
         }
     }
     .footer_dark {
         color: var(--vt-c-black);
         background-color: white;
     }
+
+    @media screen and (max-width:1024px) {
+        .footer {
+            .infos {
+                width: 250px;
+                height: 250px;
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+
 </style>
