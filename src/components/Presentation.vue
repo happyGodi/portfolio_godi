@@ -6,6 +6,7 @@
     import { RouterLink } from 'vue-router';
     import Footer from './Footer.vue'
     import Techno from './Techno.vue'
+    import Navbar from './Navbar.vue';
 
     const darkModeStore = useDarkModeStore()
     const languages = useLanguages()
@@ -46,6 +47,7 @@
 
 <template>
     <div class="landing_page">
+        <Navbar/>
         <div class="presentation">
             <div :class="['content_left', { content_left_dark: isDark}]">
                 <h1 :class="['left_title', {left_title_dark: isDark}]">{{ selectedLang.greeting }}</h1>
@@ -120,12 +122,13 @@
         height: 100%;
         padding: 1rem 1.25%;
         margin: 0 1.25%;
+        position: relative;
         .presentation {
             @include setFlex(flex-start, center);
             position: relative;
             width: 100%;
-            height: 90%;
-            min-height: 90vh;
+            height: 100%;
+            min-height: calc(100vh - 1rem);
             margin-bottom: 1rem;
 
             .content_left {
@@ -400,10 +403,10 @@
             .showroom {
                 min-height: 100vh;
                 .showroom_title {
-                    font-size: 72px;
+                    font-size: 96px;
                 }
                 .cards {
-                    width: calc((300px *1) + (1rem *2));
+                    width: calc((200px *3) + (1rem *6));
                 }
             }
         }
@@ -413,10 +416,12 @@
             .presentation {
                 @include setFlex(center, flex-start, column);
                 min-height: 100vh;
+                margin-top: 0;
                 .content_left {
+                    @include setFlex(flex-end, flex-start, column); 
                     width: 100%;
-                    height: 50%;
-                    min-height: 50vh;
+                    height: calc(95vh - 2rem);
+                   
                     .left_title {
                         font-size: 24px;
                         width: 80%;
@@ -433,8 +438,7 @@
                 .content_right {
                     @include setFlex(center, flex-start, column);
                     width: 100%;
-                    height: 50%;
-                    min-height: 50vh;
+                    height: 95vh;
                     .right_title {
                         font-size: 24px;
                         width: 80%;

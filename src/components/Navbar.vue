@@ -73,22 +73,33 @@
                 <Dropdown/> 
             </li>
         </ul>
-        <button @click="expand()" :class="['expand_button', { expand_button_dark : isDark}, { expand_button_expanded : isExpanded}]">
+        <!-- <button @click="expand()" :class="['expand_button', { expand_button_dark : isDark}, { expand_button_expanded : isExpanded}]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize">
                 <path d="M12,14.071L8.179,10.25c-0.414-0.414-1.086-0.414-1.5,0l0,0c-0.414,0.414-0.414,1.086,0,1.5l4.614,4.614 c0.391,0.391,1.024,0.391,1.414,0l4.614-4.614c0.414-0.414,0.414-1.086,0-1.5v0c-0.414-0.414-1.086-0.414-1.5,0L12,14.071z" 
                 :fill="iconColor" />
             </svg>
+        </button> -->
+        <button @click="expand()" :class="['expand_button', { expand_button_dark : isDark}, { expand_button_expanded : isExpanded}]">
+            <div class="burger">
+                <span :class="['line', { line_extended : isExpanded}]">&nbsp;</span>
+                <span :class="['line', { line_extended : isExpanded}]">&nbsp;</span>
+                <span :class="['line', { line_extended : isExpanded}]">&nbsp;</span>
+            </div>
         </button>
     </div>
 </template>
 
 <style lang="scss" scoped>
 @import "../scss/mixing";
+@import "../scss/variables";
 
     .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
         @include setFlex(space-between, center);
         width: 97.5%;
-        height: 10%;
+        height: 10vh;
         border-bottom: 2px solid var(--vt-c-black);
         margin: 0 1.25%;
         margin-bottom: 1rem;
@@ -133,11 +144,10 @@
         .navbar {
             position: relative;
             width: 97.5%;
-            height: 10%;
-            min-height: 10%;
+            height: 5vh;
             @include setFlex(flex-start, flex-start, column);
             border-bottom: 2px solid var(--vt-c-black);
-            background-color: white;
+            background-color: $white;
             transition: height 0.3s ease-in-out, min-height 0.3s ease-in-out;
         }
         .navbarDark {
@@ -150,8 +160,8 @@
             left: 0;
             width: fit-content;
             @include setFlex(center, center);
-            height: 100%;
-            padding: 1rem 2rem;
+            height: 5vh;
+            padding: 0.5rem 1rem;
             transition: none;
         }
         .links {
@@ -226,22 +236,41 @@
             margin-top: auto;
         }
         .expand_button {
-            display: block;
+            @include setFlex(center, center);
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 5px;
             right: 0;
-            padding: 0.5rem;
-            margin: 0;
-            width: fit-content;
-            height: fit-content;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            background-color: white;
+            width: 35px;
+            height: 35px;
+            background-color: $white;
             border: none;
-            transition: top 0.3s ease-in-out, transform 0.3s ease-in-out;
+            
+            .burger {
+                @include setFlex(center, center, column);
+                width: 35px;
+                height: auto;
+                position: relative;
+                .line {
+                    width: 100%;
+                    height: 3px;
+                    border-radius: 6px;
+                    margin: 3px;
+                    background-color: $dark;
+                    transition: position 0.25s ease-in-out, transform 0.25s ease-in-out;
+                }
+                .line_extended {
+                    position: absolute;
+                }
+                .line_extended:nth-child(1) {                  
+                    transform: rotate(-45deg);
+                }
+                .line_extended:nth-child(2) {
+                    opacity: 0;
+                }
+                .line_extended:nth-child(3) {
+                    transform: rotate(45deg);
+                }
+            }
         }
 
         /*dark classes */
@@ -301,12 +330,9 @@
 
         /*Expsansion */
         .navbar_expanded {
-            height: 100%;
-            min-height: 100%;
+            height: 100vh;
         }
-        .home_expanded {
-            height: 10%;
-        }
+       
         .links_expanded {
             pointer-events: all;
             opacity: 1;
@@ -315,9 +341,6 @@
             pointer-events: all;
             opacity: 1;
         }
-        .expand_button_expanded {
-            top: 5%;
-            transform: translateY(-5%) rotate(180deg);
-        }
     }
+
 </style>
