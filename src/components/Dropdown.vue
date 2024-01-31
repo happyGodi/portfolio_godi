@@ -34,71 +34,77 @@
 
 <style lang="scss" scoped>
 @import "../scss/mixing";
+@import "../scss/variables";
 
     .sub-item {
         @include setFlex(center, center);
         width: 100%;
         height: 100%;
         position: relative;
-    }
-    .active-item {
-        font-size: 18px;
-        font-weight: bold;
-        padding: 1rem;
-    }
-    .active-item:hover {
-        cursor: pointer;
-    }
-    .list-item {
-        font-size: 18px;
-        font-weight: bold;
-        padding: 1rem;
-        position: relative;
-        z-index: 1;
-        border: none;
-        outline: none;
-    }
-    .list_item_dark {
-        color: var(--vt-c-white-low);
-    }
-    .list-item:hover {
-        cursor: pointer;
-        color: white;
-    }
-    .list_item_dark:hover {
-        cursor: pointer;
-        color: var(--vt-c-black);
-    }
-    .list-item::after {
-        content: '';
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        height: 100%;
-        width: 0%;
-        background-color: var(--vt-c-black);
-        transition: width 0.2s linear;
-        z-index: -1;
-    }
-    .list_item_dark::after {
-        background-color: var(--vt-c-white-low);
-    }
-    .list-item:hover::after {
-        width: 100%;
-    }
-    .sub-menu {
-        position: absolute;
-        background-color: white;
-        top: 70%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: max-content;
-        border-radius: 0px;
-        border: none;
-        outline: none;
-    }
-    .sub_menu_dark {
-        background-color: var(--vt-c-black);
+
+        .active-item {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 1rem;
+        }
+        .active-item:hover {
+            cursor: pointer;
+        }
+        .dark {
+            color: $white-low;
+        }
+        .sub-menu {
+            position: absolute;
+            background-color: $white;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+            border-radius: 0px;
+            border: none;
+            outline: none;
+
+            .list-item {
+                font-size: 18px;
+                font-weight: bold;
+                padding: 1rem;
+                position: relative;
+                z-index: 1;
+                border: none;
+                outline: none;
+            }
+            .list_item_dark {
+                color: $white-low;
+            }
+            .list-item:hover {
+                cursor: pointer;
+                color: $white;
+            }
+            .list_item_dark:hover {
+                cursor: pointer;
+                color: $dark;
+            }
+            .list-item::after {
+                content: '';
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                height: 100%;
+                width: 0%;
+                background-color: $dark;
+                transition: width 0.2s linear;
+                z-index: -1;
+            }
+            .list_item_dark::after {
+                background-color: $dark;
+            }
+            .list-item:hover::after {
+                width: 100%;
+            }
+        }
+        .sub_menu_dark {
+            background-color: $dark;
+        }
     }
 
     .fade-down-enter-active, .fade-down-leave-active {
@@ -109,9 +115,7 @@
         opacity: 0;
         top: 50%;
     }
-    .dark {
-        color: var(--vt-c-white-low);
-    }
+   
     .lang_name {
         display: none;
     }

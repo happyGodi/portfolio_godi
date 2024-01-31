@@ -75,8 +75,8 @@
         width: 100%;
         height: fit-content;
         padding: 5rem 1rem;
-        background-color: var(--vt-c-black);
-        color: white;
+        background-color: $dark;
+        color: $white;
         flex-wrap: wrap;
         flex: 1 1 center;
 
@@ -115,8 +115,8 @@
         }
     }
     .footer_dark {
-        color: var(--vt-c-black);
-        background-color: white;
+        color: $dark;
+        background-color: $white;
     }
 
     @media screen and (max-width:1024px) {
