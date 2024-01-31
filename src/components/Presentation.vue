@@ -103,11 +103,11 @@
         display: none;
     }
     ::-webkit-scrollbar-thumb {
-        background-color: var(--vt-c-grey-soft);
+        background-color: $soft-grey;
         border-radius: 5px;
     }
     ::-webkit-scrollbar-track {
-        background-color: var(--vt-c-black);
+        background-color: $dark;
         border-radius: 5px;
         
     }
@@ -144,7 +144,7 @@
                     width: 60%;
                 }
                 .left_title_dark {
-                    color: #fff;
+                    color: $white;
                 }
                 .description {
                     width: 60%;
@@ -152,7 +152,7 @@
                     margin: 12px 0 ;
                 }
                 .description_dark {
-                    color: #fff;
+                    color: $white;
                 }
                 .project {
                     @include setFlex(flex-start, center);
@@ -160,9 +160,9 @@
                     outline: none;
                     width: fit-content;
                     height: fit-content;
-                    border: 1px solid var(--vt-c-black);
-                    background-color: var(--vt-c-black);
-                    color: white;
+                    border: 1px solid $dark;
+                    background-color: $dark;
+                    color: $white;
                     padding: 0.5rem 1rem;
                     transition: all 0.2s linear;
                     transition-property: background-color, color;
@@ -171,24 +171,24 @@
                     @include setFlex(flex-start, center);
                     border: none;
                     outline: none;
-                    border: 1px solid #fff;
-                    background-color: #fff;
+                    border: 1px solid $white;
+                    background-color: $white;
                     padding: 0.5rem 1rem;
-                    color: var(--vt-c-black);
+                    color: $dark;
                     transition: all 0.2s linear;
                     transition-property: background-color, color;
                 }
                 .project:hover {
-                    background-color: white;
-                    color: var(--vt-c-black);
+                    background-color: $white;
+                    color: $dark;
                 }
                 .project_dark:hover {
-                    color: white;
-                    background-color: var(--vt-c-black);
+                    color: $white;
+                    background-color: $dark;
                 }
             }
             .content_left_dark {
-                background-color: var(--vt-c-black);
+                background-color: $dark;
             }
             .content_right {
                 @include setFlex(center, flex-end, column);
@@ -196,16 +196,16 @@
                 height: 100%;
                 min-height: 750px;
                 padding: 2rem;
-                background-color: var(--vt-c-black);
+                background-color: $dark;
                 transition: background-color 0.2s linear;
 
                 .right_title {
                     font-size: 38px;
-                    color: white;
+                    color: $white;
                     width: 60%;
                 }
                 .right_title_dark {
-                    color: var(--vt-c-black);
+                    color: $dark;
                 }
                 h1 {
                     font-weight: bold;
@@ -215,10 +215,10 @@
                     width: 60%;
                     font-size: 18px;
                     margin: 12px 0 ;
-                    color: #fff;
+                    color: $white;
                 }
                 .description_dark {
-                    color: var(--vt-c-black);
+                    color: $dark;
                 }
 
                 .gallery {
@@ -238,24 +238,24 @@
                     @include setFlex(flex-start, center);
                     border: none;
                     outline: none;
-                    border: 1px solid var(--vt-c-black);
-                    background-color: var(--vt-c-black);
+                    border: 1px solid $dark;
+                    background-color: $dark;
                     padding: 0.5rem 1rem;
-                    color: white;
+                    color: $white;
                     transition: all 0.2s linear;
                     transition-property: background-color, color;
                 }
                 .gallery:hover {
-                    background-color: var(--vt-c-black);
-                    color: white;
+                    background-color: $dark;
+                    color: $white;
                 }
                 .gallery_dark:hover {
-                    background-color: white;
-                    color: var(--vt-c-black);
+                    background-color: $white;
+                    color: $dark;
                 }
             }
             .content_right_dark {
-                background-color: #fff;
+                background-color: $dark;
             }
         }
 
@@ -315,7 +315,7 @@
                         transition-duration: 0.25s;
                         height: 2px;
                         z-index: -1;
-                        background-color: white;
+                        background-color: $white;
                         filter: invert(100%);
                         mix-blend-mode: difference;
                     }
@@ -325,7 +325,7 @@
 
                     .card {
                         transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-                        border: 12px solid rgb(189, 189, 189);
+                        border: 12px solid $grey;
                     }
                     .shrink {
                         transform: scale(0.9);
@@ -345,7 +345,7 @@
             left: 0%;
             width: 50%;
             height: 100%;
-            background-color: var(--vt-c-black);
+            background-color: $dark;
         }
         .showroom_dark::before {
             content: "";
@@ -354,7 +354,7 @@
             left: 0%;
             width: 50%;
             height: 100%;
-            background-color: white;
+            background-color: $white;
         }
     }
     

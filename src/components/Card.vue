@@ -50,18 +50,19 @@
         color: var(--vt-c-black);
         position: relative;
         transition: all 0.35s ease-in-out;
-    }
-    .picture {
-        width: 100%;
-        max-width: 100%;
-        max-height: 100%;
-        height: 100%;
-        overflow: hidden;
-        object-fit: cover;
-        object-position: center;
-        transition: filter 0.35s ease-in-out, transform 0.35s ease-in-out;
-    }
 
+        .picture {
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            object-position: center;
+            transition: filter 0.35s ease-in-out, transform 0.35s ease-in-out;
+        }
+
+    }
     
     @media screen and (max-width: 1280px) {
         .card {

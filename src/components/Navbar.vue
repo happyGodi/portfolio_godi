@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { ref, computed } from 'vue';
+    import { ref, computed, onBeforeMount } from 'vue';
     import { RouterLink } from 'vue-router';
     import { useDarkModeStore } from '../stores/darkMode';
     import { useLanguages } from '@/stores/languages';
@@ -73,17 +73,11 @@
                 <Dropdown/> 
             </li>
         </ul>
-        <!-- <button @click="expand()" :class="['expand_button', { expand_button_dark : isDark}, { expand_button_expanded : isExpanded}]">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize">
-                <path d="M12,14.071L8.179,10.25c-0.414-0.414-1.086-0.414-1.5,0l0,0c-0.414,0.414-0.414,1.086,0,1.5l4.614,4.614 c0.391,0.391,1.024,0.391,1.414,0l4.614-4.614c0.414-0.414,0.414-1.086,0-1.5v0c-0.414-0.414-1.086-0.414-1.5,0L12,14.071z" 
-                :fill="iconColor" />
-            </svg>
-        </button> -->
         <button @click="expand()" :class="['expand_button', { expand_button_dark : isDark}, { expand_button_expanded : isExpanded}]">
             <div class="burger">
-                <span :class="['line', { line_extended : isExpanded}]">&nbsp;</span>
-                <span :class="['line', { line_extended : isExpanded}]">&nbsp;</span>
-                <span :class="['line', { line_extended : isExpanded}]">&nbsp;</span>
+                <span :class="['line', { line_extended : isExpanded}, { line_dark : isDark}]">&nbsp;</span>
+                <span :class="['line', { line_extended : isExpanded}, { line_dark : isDark}]">&nbsp;</span>
+                <span :class="['line', { line_extended : isExpanded}, { line_dark : isDark}]">&nbsp;</span>
             </div>
         </button>
     </div>
@@ -100,246 +94,258 @@
         @include setFlex(space-between, center);
         width: 97.5%;
         height: 10vh;
-        border-bottom: 2px solid var(--vt-c-black);
+        border-bottom: 2px solid $dark;
         margin: 0 1.25%;
         margin-bottom: 1rem;
         z-index: 10;
-        background-color: white;
+        background-color: $white;
+
+        .home {
+            @include setFlex(center, center);
+            width: fit-content;
+            height: 130%;
+            padding: 1rem 2rem;
+            background-color: $dark;
+            outline: 5px solid $white;
+            color: $white;
+        }
+        .home:hover {
+            cursor: pointer;
+        }
+        .homeDark {
+            outline: 5px solid $dark;
+            background-color: $white-low;
+            color: $dark;
+        }
+        ul {
+            @include setFlex(center, center);
+            flex-direction: row;
+            height: 100%;
+
+            li {
+                padding: 1rem;
+                list-style-type: none;
+            }
+        }
+        .expand_button {
+            display: none;
+        }
     }
     .navbarDark {
-        border-bottom: 2px solid var(--vt-c-white-low);
-        background-color: var(--vt-c-black);
-    }
-    .home {
-        @include setFlex(center, center);
-        width: fit-content;
-        height: 130%;
-        padding: 1rem 2rem;
-        background-color: var(--vt-c-black);
-        outline: 5px solid white;
-        color: white;
-    }
-    .home:hover {
-        cursor: pointer;
-    }
-    .homeDark {
-        outline: 5px solid var(--vt-c-black);
-        background-color: var(--vt-c-white-low);
-        color: var(--vt-c-black);
-    }
-    ul {
-        @include setFlex(center, center);
-        flex-direction: row;
-        height: 100%;
-    }
-    li {
-        padding: 1rem;
-        list-style-type: none;
-    }
-    .expand_button {
-       display: none;
+        border-bottom: 2px solid $white-low;
+        background-color: $white-low;
     }
     
     @media screen and (max-width: 768px) {
         .navbar {
+            @include setFlex(flex-start, flex-start, column);
             position: relative;
             width: 97.5%;
             height: 5vh;
-            @include setFlex(flex-start, flex-start, column);
-            border-bottom: 2px solid var(--vt-c-black);
+            border-bottom: 2px solid $dark;
             background-color: $white;
             transition: height 0.3s ease-in-out, min-height 0.3s ease-in-out;
-        }
-        .navbarDark {
-            border-bottom: 2px solid var(--vt-c-white-low);
-            background-color: var(--vt-c-black);
-        }
-        .home {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: fit-content;
-            @include setFlex(center, center);
-            height: 5vh;
-            padding: 0.5rem 1rem;
-            transition: none;
-        }
-        .links {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            height: 30%;
-            min-width: 100%;
-            padding: 1rem 2rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease-in-out, pointer-events 0.3s ease-in-out;
-        }
-        .settings {
-            position: absolute;
-            top: 20%;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            min-width: 100%;
-            height: fit-content;
-            padding: 1rem 2rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease-in-out, pointer-events 0.3s ease-in-out;
-        }
-        .facebook::after {
-            content: "Godi Godi";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-        }
-        .instagram::after {
-            content: "godi_godiii";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-        }
-        .github::after {
-            content: "happyGodi";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-        }
-        .light_mode::after {
-            content: "Light mode";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-        }
-        .dark_mode::after {
-            content: "Dark mode";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-        }
-        .expand_button {
-            @include setFlex(center, center);
-            position: absolute;
-            top: 5px;
-            right: 0;
-            width: 35px;
-            height: 35px;
-            background-color: $white;
-            border: none;
-            
-            .burger {
-                @include setFlex(center, center, column);
-                width: 35px;
-                height: auto;
-                position: relative;
-                .line {
-                    width: 100%;
-                    height: 3px;
-                    border-radius: 6px;
-                    margin: 3px;
-                    background-color: $dark;
-                    transition: position 0.25s ease-in-out, transform 0.25s ease-in-out;
+
+            .home {
+                @include setFlex(center, center);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: fit-content;
+                height: 5vh;
+                padding: 0.5rem 1rem;
+                transition: none;
+            }
+            .links {
+                @include setFlex(flex-start, flex-start, column);
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 30%;
+                min-width: 100%;
+                padding: 1rem 2rem;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease-in-out, pointer-events 0.3s ease-in-out;
+
+                .facebook::after {
+                    content: "Godi Godi";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
                 }
-                .line_extended {
-                    position: absolute;
+                .instagram::after {
+                    content: "godi_godiii";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
                 }
-                .line_extended:nth-child(1) {                  
-                    transform: rotate(-45deg);
+                .github::after {
+                    content: "happyGodi";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
                 }
-                .line_extended:nth-child(2) {
-                    opacity: 0;
+
+
+                .facebook_dark::after {
+                    content: "Godi Godi";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
+                    color: $white;
                 }
-                .line_extended:nth-child(3) {
-                    transform: rotate(45deg);
+                .instagram_dark::after {
+                    content: "godi_godiii";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
+                    color: $white;
+                }
+                .github_dark::after {
+                    content: "happyGodi";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
+                    color: $white;
                 }
             }
-        }
 
-        /*dark classes */
-        .expand_button_dark {
-            background-color: var(--vt-c-black);
-        }
-        .facebook_dark::after {
-            content: "Godi Godi";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-            color: white;
-        }
-        .instagram_dark::after {
-            content: "godi_godiii";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-            color: white;
-        }
-        .github_dark::after {
-            content: "happyGodi";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-            color: white;
-        }
-        .light_mode_dark::after {
-            content: "Light mode";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-            color: white;
-        }
-        .dark_mode_dark::after {
-            content: "Dark mode";
-            display: inline-block;
-            height: 100%;
-            width: fit-content;
-            font-size: 18px;
-            margin-left: 12px;
-            margin-top: auto;
-            color: white;
-        }
+            .links_expanded {
+                pointer-events: all;
+                opacity: 1;
+            }
+            .settings {
+                @include setFlex(flex-start, flex-start, column);
+                position: absolute;
+                top: 20%;
+                left: 0;
+                min-width: 100%;
+                height: fit-content;
+                padding: 1rem 2rem;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease-in-out, pointer-events 0.3s ease-in-out;
 
+                .light_mode::after {
+                    content: "Light mode";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
+                }
+                .dark_mode::after {
+                    content: "Dark mode";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
+                }
+
+                .light_mode_dark::after {
+                    content: "Light mode";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
+                    color: $white;
+                }
+                .dark_mode_dark::after {
+                    content: "Dark mode";
+                    display: inline-block;
+                    height: 100%;
+                    width: fit-content;
+                    font-size: 18px;
+                    margin-left: 12px;
+                    margin-top: auto;
+                    color: $white;
+                }
+
+            }
+
+            
+            .settings_expanded {
+                pointer-events: all;
+                opacity: 1;
+            }
+
+            .expand_button {
+                @include setFlex(center, center);
+                position: absolute;
+                top: 5px;
+                right: 0;
+                width: 35px;
+                height: 35px;
+                background-color: transparent;
+                border: none;
+                
+                .burger {
+                    @include setFlex(center, center, column);
+                    width: 35px;
+                    height: auto;
+                    position: relative;
+                    .line {
+                        width: 100%;
+                        height: 3px;
+                        border-radius: 6px;
+                        margin: 3px;
+                        background-color: $dark;
+                        transition: position 0.25s ease-in-out, transform 0.25s ease-in-out;
+                    }
+                    .line_dark {
+                        background-color: $white;
+                    }
+                    .line_extended {
+                        position: absolute;
+                    }
+                    .line_extended:nth-child(1) {                  
+                        transform: rotate(-45deg);
+                    }
+                    .line_extended:nth-child(2) {
+                        opacity: 0;
+                    }
+                    .line_extended:nth-child(3) {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+
+            /*dark classes */
+            .expand_button_dark {
+                background-color: $dark;
+            }
+        }
+        .navbarDark {
+            border-bottom: 2px solid $white-low;
+            background-color: $dark;
+        }
         /*Expsansion */
         .navbar_expanded {
             height: 100vh;
-        }
-       
-        .links_expanded {
-            pointer-events: all;
-            opacity: 1;
-        }
-        .settings_expanded {
-            pointer-events: all;
-            opacity: 1;
         }
     }
 

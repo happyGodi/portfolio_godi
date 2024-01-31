@@ -32,17 +32,18 @@
 
 <style lang="scss" scoped>
 @import "../scss/mixing";
+@import "../scss/variables";
 
     .landing {
+        @include setFlex(flex_start, center, column);
         position: relative;
         width: 100%;
         height: 100%;
-        @include setFlex(flex_start, center, column);
         position: relative;
         transition: background-color 0.2s linear;
     }
     .landingDark {
-        background-color: var(--vt-c-black);
+        background-color: $dark;
     }
     .fade-enter-active, .fade-leave-active {
         transition: opacity 0.2s linear;

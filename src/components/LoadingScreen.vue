@@ -23,43 +23,44 @@
 
 <style lang="scss" scoped>
 @import "../scss/mixing";
+@import "../scss/variables";
 
     .loadingScreen {
+        @include setFlex(center, flex-start);
         width: 100vw;
         height: 100vh;
         position: absolute;
         top: 0;
         left: 0;
         z-index: 20;
-        @include setFlex(center, flex-start);
         padding: 0rem;
-        flex-direction: row;
         transition: opacity 0.5s linear, pointer-events 0.5s linear;
-    }
-    .loadingContent {
-        @include setFlex(center, center);
-        width: 100%;
-        height: 100%;
-        background-color:  var(--vt-c-black);
-        color: white;
-    }
 
-    .hello {
-        font-size: 108px;
-        font-weight: bolder;
-        height: fit-content;
-        width: fit-content;
-        padding: 10px 16px;
-        transition: all 1s linear;
-        position: relative;
-        opacity: 0;
-    }
+        .loadingContent {
+            @include setFlex(center, center);
+            width: 100%;
+            height: 100%;
+            background-color:  $dark;
+            color: $white;
 
-    .first { 
-        animation: first 3s ease-in-out;
-    }
-    .second { 
-        animation: second 3s 2s ease-in-out;
+            .hello {
+                font-size: 108px;
+                font-weight: bolder;
+                height: fit-content;
+                width: fit-content;
+                padding: 10px 16px;
+                transition: all 1s linear;
+                position: relative;
+                opacity: 0;
+            }
+
+            .first { 
+                animation: first 3s ease-in-out;
+            }
+            .second { 
+                animation: second 3s 2s ease-in-out;
+            }
+        }
     }
 
     .curtain-enter-active, .curtain-leave-active {
