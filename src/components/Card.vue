@@ -69,6 +69,12 @@
             height: calc(300px - 1rem);
         }
     }
+    @media screen and (max-width: 1024px) {
+        .card {
+            width: 200px;
+            height: calc(300px - 1rem);
+        }
+    }
     @media screen and (max-width: 768px) {
         .card {
             width: 300px;

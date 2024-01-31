@@ -1,5 +1,4 @@
 <script setup lang="ts">
-    import Navbar from './Navbar.vue';
     import { useDarkModeStore } from '@/stores/darkMode';
     import { useLoadingScreen } from '@/stores/loadingScreen';
     import { computed } from 'vue';
@@ -27,7 +26,6 @@
         <Transition name="fade">
             <LoadingScreen/>
         </Transition>
-        <Navbar/>
         <RouterView></RouterView>
     </div>
 </template>
