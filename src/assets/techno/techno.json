@@ -1,19 +1,19 @@
 [
     {
         "name": "Vue",
-        "desc": "Vue Js is a powerfull, light and handy web framework for web app development. I've started with Vue 3 and Js and now i'm on Vue 3 combined with Typescript using Option API.",
+        "desc": "Vue Js is a powerfull, light and handy web framework that i use with Option API combined with Typescript",
         "link": "https://vuejs.org/",
         "path": "vue.png"
     },
     {
         "name": "TypeScript",
-        "desc": "Basically Javascript with Types. It has a strong static types for data that provides higher security and maintenance code which made me prefer it over Javascript.",
+        "desc": "Basically Javascript with Types. I started using it because it is fun secure and easy to maintain than Js.",
         "link": "https://www.typescriptlang.org/docs/",
         "path": "typescript.png"
     },
     {
         "name": "JavsScript",
-        "desc": "One of the most popular coding language for web development. An Object Oriented Programing language which happens to be the first language in my very first web project.",
+        "desc": "One of the most popular coding language for web development. An Object Oriented Programing language which was my first programing language.",
         "link": "https://developer.mozilla.org/fr/docs/Web/JavaScript",
         "path": "javascript.png"
     },
@@ -25,7 +25,7 @@
     },
     {
         "name": "Html 5",
-        "desc": "Hypertext Markup Language, One of the basics of web development. HTML in its fith version is a markup language for web.",
+        "desc": "Hypertext Markup Language, One of the basics of web development.",
         "link": "https://developer.mozilla.org/fr/docs/Web/HTML",
         "path": "html.png"
     },
@@ -37,7 +37,7 @@
     },
     {
         "name": "Express Js",
-        "desc": "Express Js is a minimalistic NodeJs backend framework written in Javascript. It is used to build application based on NodeJs like a web server.",
+        "desc": "Express Js is a minimalistic NodeJs backend framework that i use to build web server for applications.",
         "link": "https://devdocs.io/express/",
         "path": "express.png"
     },
@@ -49,43 +49,43 @@
     },
     {
         "name": "Less",
-        "desc": "Less is another CSS preprocessor like Scss/Sass. It provides the same possibilities but with few differences like no loop. I did learn it during my intership in 2023.",
+        "desc": "Less is another CSS preprocessor like Scss/Sass. It provides the same possibilities but with few differences. I did learn it during my intership in 2023.",
         "link": "https://lesscss.org/",
         "path": "less.png"
     },
     {
         "name": "MongoDB",
-        "desc": "MongoDb is a Database Management System (DBMS) for non-relational document database. It has flexible data model that unable unstructured data storage. That also can be confusing.",
+        "desc": "A Database Management System (DBMS) for non-relational database. It unables unstructured data storage which can be confusing.",
         "link": "https://www.mongodb.com/docs/",
         "path": "mongodb.png"
     },
     {
         "name": "MySQL",
-        "desc": "MySQL, opposite to MongoDb is a DBMS for relational databases. The database structure is organized into physical files optimised for speed.",
+        "desc": "MySQL, opposite to MongoDb is a DBMS for relational databases. My very first DBMS.",
         "link": "https://dev.mysql.com/doc/",
         "path": "mysql.png"
     },
     {
         "name": "Adobe Photoshop",
-        "desc": "Photoshop is a software from the Adobe suite. It is a professional and powerful software for image treatment. That involves photo manipulation, web design, graphism, etc...",
+        "desc": "Photoshop is a software from the Adobe suite. It is a professional and powerful software for image treatment. ",
         "link": "https://helpx.adobe.com/photoshop/user-guide.html",
         "path": "photoshop.png"
     },
     {
         "name": "Adobe Illustrator",
-        "desc": "Illustrator, like photoshop is a software from the Adobe suite but unlike it, Illustrator is dedicated to graphic design and vector shapes. It allows graphic creations in vector like file like pdf or svg.",
+        "desc": "Illustrator, like photoshop is a software from the Adobe suite but unlike it, it is dedicated to graphic design and vector shapes. ",
         "link": "https://helpx.adobe.com/illustrator/user-guide.html",
         "path": "illustrator.png"
     },
     {
         "name": "Clip Studio Paint",
-        "desc": "Clip Studio Paint is a dedicades drawing software tool which is one of the most complete and powerfull of its type. I moved to it due to those reasons.",
+        "desc": "Clip Studio Paint is a dedicades drawing software tool which is one of the most complete and powerfull of its type.",
         "link": "https://help.clip-studio.com/en-us/First_Topic.html",
         "path": "csp.png"
     },
     {
         "name": "MedibangPaint Pro",
-        "desc": "MedibangPaint Pro is another dedicades drawing software. It is less complete than CSP but it is free and powerfull enough to get you some amazing result and it was my first drawing software.",
+        "desc": "MedibangPaint Pro is another dedicades drawing software. It is free and powerfull enough to get you some amazing result.",
         "link": "https://medibangpaint.com/en/",
         "path": "medibangpaint.png"
     }
