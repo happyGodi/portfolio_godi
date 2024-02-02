@@ -132,8 +132,8 @@
         }
     }
     .navbarDark {
-        border-bottom: 2px solid $white-low;
-        background-color: $white-low;
+        border-bottom: 2px solid $white;
+        background-color: $dark;
     }
     
     @media screen and (max-width: 768px) {

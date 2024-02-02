@@ -83,9 +83,10 @@
         .infos {
             @include setFlex(center, center, column);
             width: 300px;
-            height: 250px;
-            padding: 1rem 2rem;
-            margin: 1rem;
+            height: 150px;
+            overflow: hidden;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
             position: relative;
 
             h4 {

@@ -7,8 +7,11 @@
     import Footer from './Footer.vue'
     import Techno from './Techno.vue'
     import Navbar from './Navbar.vue';
+    import { useLoadingScreen } from '@/stores/loadingScreen';
+    import LoadingScreen from './LoadingScreen.vue';
 
     const darkModeStore = useDarkModeStore()
+    const loader = useLoadingScreen()
     const languages = useLanguages()
     const selectedLang = computed<any>(() => languages.defaultLang)
     const iconSize = ref(24)
@@ -16,12 +19,17 @@
     const buttonIconOnHoverColorInverted = computed<string>(() => darkModeStore.buttonIconOnHoverColorInverted)
     const isDark = computed<boolean>(() => darkModeStore.isDark)
     const cardList = computed<any>(() => languages.defaultCardList.cards)
+    const isLoading = computed<any>(() => loader.isLoading)
     let active = ref(false)
     let currentId = ref(null)
 
     onMounted(() => {
         resetColor()
         resetColorReversed()
+        loader.startLoading()
+        setTimeout(() => {
+            loader.stopLoading()
+        }, 5750);
     })
 
     function lightColor() {
@@ -46,7 +54,8 @@
 </script>
 
 <template>
-    <div class="landing_page">
+    <div :class="['landing_page', { landing_page_loading : isLoading}, { landing_page_dark : isDark }]">
+        
         <Navbar/>
         <div class="presentation">
             <div :class="['content_left', { content_left_dark: isDark}]">
@@ -99,17 +108,29 @@
 @import "../scss/_mixing.scss";
 @import "../scss/variables";
 
-    ::-webkit-scrollbar {
-        display: none;
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: $soft-grey;
-        border-radius: 5px;
-    }
-    ::-webkit-scrollbar-track {
-        background-color: $dark;
-        border-radius: 5px;
-        
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: $dark;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track:horizontal {
+  background-color: $grey;
+  border-radius: 10px;
+}
+
+    .landing_page_loading {
+        overflow: hidden;
     }
 
     .landing_page {
@@ -117,11 +138,11 @@
             default: row, justify-content => horizontal axis
             if flex-direction goes to column, justify-content => vertical axis, axis is switched
         */
-        @include setFlex(center, flex-start, column);
-        width: calc(100% - 1.25%);
+        @include setFlex(flex-start, center, column);
+        width: 100%;
         height: 100%;
         padding: 1rem 1.25%;
-        margin: 0 1.25%;
+        margin: 0 ;
         position: relative;
         .presentation {
             @include setFlex(flex-start, center);
@@ -129,12 +150,11 @@
             width: 100%;
             height: 100%;
             min-height: calc(100vh - 1rem);
-            margin-bottom: 1rem;
 
             .content_left {
                 @include setFlex(center, flex-start, column);
                 width: 50%;
-                height: 100%;
+                height: 100vh;
                 min-height: 750px;
                 padding: 2rem;
                 transition: background-color 0.2s linear;
@@ -193,8 +213,7 @@
             .content_right {
                 @include setFlex(center, flex-end, column);
                 width: 50%;
-                height: 100%;
-                min-height: 750px;
+                height: 100vh;
                 padding: 2rem;
                 background-color: $dark;
                 transition: background-color 0.2s linear;
@@ -255,7 +274,7 @@
                 }
             }
             .content_right_dark {
-                background-color: $dark;
+                background-color: $white;
             }
         }
 
@@ -263,8 +282,7 @@
             position: relative;
             @include setFlex(center, center, column);
             width: 100%;
-            height: 100%;
-            min-height: calc(100vh - 2rem);
+            height: 100vh;
             padding: 1rem 1.25%;
 
             .showroom_title {
@@ -346,6 +364,7 @@
             width: 50%;
             height: 100%;
             background-color: $dark;
+            z-index: -1;
         }
         .showroom_dark::before {
             content: "";
@@ -355,7 +374,11 @@
             width: 50%;
             height: 100%;
             background-color: $white;
+            z-index: -1;
         }
+    }
+    .landing_page_dark {
+        background-color: $dark;
     }
     
     @media screen and (max-width: 1280px) {
