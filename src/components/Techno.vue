@@ -48,7 +48,7 @@
         .tech_list{
             @include setFlex(flex-start, flex-start, column);
             list-style-type: none;
-            width: 50%;
+            width: 40%;
             height: fit-content;    
             padding: 2rem 1rem;     
             position: relative;

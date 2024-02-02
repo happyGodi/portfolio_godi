@@ -29,13 +29,13 @@
         @include setFlex(center, flex-start);
         width: 100vw;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         z-index: 20;
         padding: 0rem;
         transition: opacity 0.5s linear, pointer-events 0.5s linear;
-
+        
         .loadingContent {
             @include setFlex(center, center);
             width: 100%;
@@ -44,7 +44,7 @@
             color: $white;
 
             .hello {
-                font-size: 108px;
+                font-size: 96px;
                 font-weight: bolder;
                 height: fit-content;
                 width: fit-content;
@@ -95,8 +95,22 @@
     }
 
     @media screen and (max-width: 1280px) {
-        .loading_message {
-            font-size: 48px;
+        .loadingScreen {
+            .loadingContent {
+                .hello {
+                    font-size: 48px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        .loadingScreen {
+            .loadingContent {
+                @include setFlex(center, center, column);
+                .hello {
+                    font-size: 36px;
+                }
+            }
         }
     }
 </style>

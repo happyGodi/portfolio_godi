@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  import HelloMe from '@/components/HelloMe.vue';
+  import Presentation from '@/components/Presentation.vue';
 </script>
 
 <template>
   <main>
-    <HelloMe/>
+    <Presentation/>
   </main>
 </template>
