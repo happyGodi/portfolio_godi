@@ -8,7 +8,7 @@
     import Techno from './Techno.vue'
     import Navbar from './Navbar.vue';
     import { useLoadingScreen } from '@/stores/loadingScreen';
-    import LoadingScreen from './LoadingScreen.vue';
+    import Projects from './Projects.vue';
 
     const darkModeStore = useDarkModeStore()
     const loader = useLoadingScreen()
@@ -55,7 +55,6 @@
 
 <template>
     <div :class="['landing_page', { landing_page_loading : isLoading}, { landing_page_dark : isDark }]">
-        
         <Navbar/>
         <div class="presentation">
             <div :class="['content_left', { content_left_dark: isDark}]">
@@ -100,6 +99,7 @@
             </div>
         </div>
         <Techno/>
+        <Projects/>
         <Footer/>
     </div>   
 </template>
@@ -121,7 +121,7 @@
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:horizontal {
-  background-color: $dark;
+  background-color: $lite-dark;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-track:horizontal {
@@ -275,6 +275,7 @@
             }
             .content_right_dark {
                 background-color: $white;
+                color: $dark;
             }
         }
 
@@ -374,7 +375,7 @@
             width: 50%;
             height: 100%;
             background-color: $white;
-            z-index: -1;
+            z-index: 0;
         }
     }
     .landing_page_dark {

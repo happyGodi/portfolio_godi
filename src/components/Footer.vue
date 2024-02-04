@@ -72,13 +72,12 @@
 
     .footer {
         @include setFlex(center, space-evenly);
+        @include flexing();
         width: 100%;
         height: fit-content;
         padding: 5rem 1rem;
         background-color: $dark;
         color: $white;
-        flex-wrap: wrap;
-        flex: 1 1 center;
 
         .infos {
             @include setFlex(center, center, column);

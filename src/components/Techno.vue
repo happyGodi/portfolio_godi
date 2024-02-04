@@ -39,7 +39,7 @@
         padding: 3rem 1rem;
 
         .title {
-            font-size: 48px;
+            font-size: 72px;
             width: fit-content;
             height: fit-content;
             padding: 6px;
