@@ -13,3 +13,10 @@
     width: 100%;
     height: auto;
 }
+
+@mixin flexing(){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 center;
+}

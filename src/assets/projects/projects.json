@@ -1,0 +1,12 @@
+[
+    {
+        "name": "My Portfolio",
+        "desc": "A project to showcase my skill and showcase my projects. I have made it using Vue 3 with typescript and SCSS. The data are stored in JSON files.",
+        "path": "portfolio.png"
+    },
+    {
+        "name": "Authentication API",
+        "desc": "This is mostly a backend project i made in my third year of college. An API for a college project made using JWT, Typescript, NodeJs, ExpressJs and MongoDb.",
+        "path": "auth_API.png"
+    }
+]
