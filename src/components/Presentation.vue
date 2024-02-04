@@ -186,6 +186,7 @@
                     padding: 0.5rem 1rem;
                     transition: all 0.2s linear;
                     transition-property: background-color, color;
+                    overflow: hidden;
                 }
                 .project_dark {
                     @include setFlex(flex-start, center);
