@@ -6,27 +6,28 @@
     const darkMode = useDarkModeStore()
     const languages = useLanguages()
     const isDark = computed<boolean>(() => darkMode.isDark)
-    const languageList = computed<Array<any>>(() => languages.languages)
     const isOpen = ref<boolean>(false)
-    const selectedLang = computed<any>(() => languages.defaultLang)
+    const lang = ref([
+        { language : 'en', name : 'English'},
+        { language : 'fr', name : 'Français'}
+    ])
 
     function open(): void {
         isOpen.value = !isOpen.value
     }
-
-    function selectLang(lang: any): void {
-        languages.switchLang(lang)
+    function selectLang(lang: string): void {
+        languages.changeLocal(lang)
     }
 
 </script>
 
 <template>
     <div :onClick="open" :class="['sub-item', { sub_menu_dark : isDark}]">
-        <h4 :class="['active-item', { dark: isDark}]">{{ selectedLang.code }}</h4>
-        <h4 :class="['active-item lang_name', { dark: isDark}]">{{ selectedLang.name }}</h4>
+        <h4 :class="['active-item', { dark: isDark}]">{{ $t('dropdown.language') }}</h4>
+        <h4 :class="['active-item lang_name', { dark: isDark}]">{{ $t('dropdown.name') }}</h4>
         <Transition name="fade-down">
             <div v-if="isOpen" :class="['sub-menu', { sub_menu_dark: isDark}]">
-                <h4 v-for="(item, i) in languageList" :key="i" @click="selectLang(item)" :class="['list-item', { list_item_dark: isDark}]">{{ item.name }}</h4>
+                <h4 v-for="(item, i) in lang" :key="i" @click="selectLang(item.language)" :class="['list-item', { list_item_dark: isDark}]">{{ item.name }}</h4>
             </div>
         </Transition>
     </div>

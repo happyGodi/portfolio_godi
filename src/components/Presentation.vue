@@ -1,7 +1,6 @@
 <script setup lang="ts">
     import { ref, computed, onMounted } from 'vue';
     import { useDarkModeStore } from '@/stores/darkMode';
-    import { useLanguages } from '@/stores/languages';
     import Card from './Card.vue';
     import { RouterLink } from 'vue-router';
     import Footer from './Footer.vue'
@@ -12,13 +11,10 @@
 
     const darkModeStore = useDarkModeStore()
     const loader = useLoadingScreen()
-    const languages = useLanguages()
-    const selectedLang = computed<any>(() => languages.defaultLang)
     const iconSize = ref(24)
     const buttonIconOnHoverColor = computed<string>(() => darkModeStore.buttonIconOnHoverColor)
     const buttonIconOnHoverColorInverted = computed<string>(() => darkModeStore.buttonIconOnHoverColorInverted)
     const isDark = computed<boolean>(() => darkModeStore.isDark)
-    const cardList = computed<any>(() => languages.defaultCardList.cards)
     const isLoading = computed<any>(() => loader.isLoading)
     let active = ref(false)
     let currentId = ref(null)
@@ -58,11 +54,11 @@
         <Navbar/>
         <div class="presentation">
             <div :class="['content_left', { content_left_dark: isDark}]">
-                <h1 :class="['left_title', {left_title_dark: isDark}]">{{ selectedLang.greeting }}</h1>
-                <h1 :class="['left_title', {left_title_dark: isDark}]">{{ selectedLang.names}}</h1>
-                <p :class="['description', {description_dark: isDark}]">{{ selectedLang.description}}</p>
+                <h1 :class="['left_title', {left_title_dark: isDark}]">{{ $t('presentation.greeting') }}</h1>
+                <h1 :class="['left_title', {left_title_dark: isDark}]">{{ $t('presentation.names')}}</h1>
+                <p :class="['description', {description_dark: isDark}]">{{ $t('presentation.description')}}</p>
                 <RouterLink to="/project" :class="[isDark ? 'project_dark' : 'project']" :onMouseenter="lightColor" :onMouseleave="resetColor">
-                    {{ selectedLang.project }}
+                    {{ $t('presentation.project') }}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" :width="iconSize" :height="iconSize">
                         <path d="M29.84375 13.09375C29.066406 13.167969 28.402344 13.691406 28.148438 14.429688C27.890625 15.171875 28.089844 15.992188 28.65625 16.53125L35.125 23L10 23C9.9375 22.996094 9.875 22.996094 9.8125 23C8.707031 23.050781 7.855469 23.988281 7.90625 25.09375C7.957031 26.199219 8.894531 27.050781 10 27L35.125 27L28.625 33.46875C27.839844 34.253906 27.839844 35.527344 28.625 36.3125C29.410156 37.097656 30.683594 37.097656 31.46875 36.3125L41.34375 26.40625L42.78125 25L41.34375 23.59375L31.46875 13.6875C31.046875 13.253906 30.449219 13.035156 29.84375 13.09375Z" 
                             :fill="buttonIconOnHoverColor" />
@@ -70,11 +66,11 @@
                 </RouterLink>
             </div>
             <div :class="['content_right', { content_right_dark: isDark}]">
-                <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ selectedLang.next }}</h1>
-                <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ selectedLang.artistNames }}</h1>
-                <p :class="['description', {description_dark: isDark}]">{{ selectedLang.artDescription}}</p>
+                <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ $t('presentation.next') }}</h1>
+                <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ $t('presentation.artistNames') }}</h1>
+                <p :class="['description', {description_dark: isDark}]">{{ $t('presentation.artDescription')}}</p>
                 <a href="#gallery" :class="[isDark ? 'gallery_dark' : 'gallery']" :onMouseenter="lightColorReversed" :onMouseleave="resetColorReversed">
-                    {{ selectedLang.gallery }}
+                    {{ $t('presentation.gallery') }}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" :width="iconSize" :height="iconSize">
                         <path d="M29.84375 13.09375C29.066406 13.167969 28.402344 13.691406 28.148438 14.429688C27.890625 15.171875 28.089844 15.992188 28.65625 16.53125L35.125 23L10 23C9.9375 22.996094 9.875 22.996094 9.8125 23C8.707031 23.050781 7.855469 23.988281 7.90625 25.09375C7.957031 26.199219 8.894531 27.050781 10 27L35.125 27L28.625 33.46875C27.839844 34.253906 27.839844 35.527344 28.625 36.3125C29.410156 37.097656 30.683594 37.097656 31.46875 36.3125L41.34375 26.40625L42.78125 25L41.34375 23.59375L31.46875 13.6875C31.046875 13.253906 30.449219 13.035156 29.84375 13.09375Z" 
                             :fill="buttonIconOnHoverColorInverted" />
@@ -83,18 +79,18 @@
             </div>
         </div>
         <div id="gallery" :class="['showroom', { showroom_dark: isDark}]">
-            <h1 class="showroom_title">{{ selectedLang.gallery }}</h1>
+            <h1 class="showroom_title"> {{ $t('presentation.gallery') }} </h1>
             <div class="cards">
-                <div class="slider" v-for="(c, index) in cardList" :key="index" ref="cardRef">
+                <div class="slider" v-for="(c,i) in $t('cards')" :key="i" ref="cardRef">
                     <Card
-                        @mouseenter="hovering(index)" @mouseleave="notHover" 
-                        :class="['card', { shrink : (active && (currentId != index))}, { grow : (active && (currentId == index))}]"
-                        :name="c.cardName"
-                        :path="c.path"
-                        :description="c.description"
-                        :selectedId="index"
+                        @mouseenter="hovering(i)" @mouseleave="notHover()" 
+                        :class="['card', { shrink : (active && (currentId != i))}, { grow : (active && (currentId == i))}]"
+                        :name="$t(`cards.${i}.cardName`)"
+                        :path="$t(`cards.${i}.path`)"
+                        :description="$t(`cards.${i}.description`)"
+                        :selectedId="i"
                     />
-                    <h4>{{ c.cardName }}</h4>
+                    <h4>{{ $t(`cards.${i}.cardName`)}}</h4> <!-- yes, this is mad -->
                 </div>
             </div>
         </div>
@@ -107,6 +103,7 @@
 <style lang="scss" scoped>
 @import "../scss/_mixing.scss";
 @import "../scss/variables";
+
 
 ::-webkit-scrollbar {
   width: 8px;

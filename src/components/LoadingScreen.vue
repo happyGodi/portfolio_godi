@@ -6,16 +6,19 @@
     const loader = useLoadingScreen()
     const language = useLanguages()
     const isLoaded = computed<boolean>(() => loader.isLoading )
-    const selectedLang = computed<any>(() => language.defaultLang)
+    const selectedLang = computed<any>(() => language.lang)
 
+    function translate(l: string) {
+        language.t(l)
+    }
 </script>
 
 <template>
     <Transition name="curtain">
         <div v-if="isLoaded" class="loadingScreen">
             <div class="loadingContent">
-                <h2 :class="[ { first: isLoaded},'hello']">{{ selectedLang.hello }}</h2>
-                <h2 :class="[ { second: isLoaded},'hello']">{{ selectedLang.welcome }}</h2>
+                <h2 :class="[ { first: isLoaded},'hello']">{{ $t('loader.hello') }}</h2>
+                <h2 :class="[ { second: isLoaded},'hello']">{{ $t('loader.welcome') }}</h2>
             </div>
         </div>
     </Transition>
