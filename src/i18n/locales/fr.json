@@ -1,0 +1,71 @@
+{
+    "dropdown": {
+        "name": "Français",
+        "language": "Fr"
+    },
+    "nav": {
+        "home": "Acceuil"
+    },
+    "presentation": {
+        "greeting": "Bonjour!",
+        "names":"Je suis Godi Godi. Je suis développeur web.",
+        "description": "Je suis un jeune développeur spécialisé dans les applications web utilisant Vue. La plupart des gens m'appelle Godi Godi. Je suis tombé amoureux de Vue pour sa légèreté, sa prise en main et ses capacités. J'en ai fait usage sur tout mes projets personnels.",
+        "artDescription":"Je suis aussi artiste graphique. Je réalise des illustrations de toutes sortes en utilisant divers logiciels spécifique.. J'ai eu la chance de recevoir des commandes depuis 2021. I realise pour le plus souvent des dessins de voitures mais je reste polyvalent.",
+        "gallery": "GALLERIE",
+        "project": "PROJETS",
+        "next": "Et aussi,",
+        "artistNames": "Je suis artiste graphique sous le nom HappyGodi."
+    },
+    "loader": {
+        "hello": "Bonjour!",
+        "welcome": "Bienvenue!"
+    },
+    "cards": [
+        {
+            "cardName": "Fine and Lite",
+            "description": "Simple inspiration from one of my friend using two tone.",
+            "path" : "dual_tone.jpg"
+        },
+        {
+            "cardName": "Red Splash",
+            "description": "Curly hair in a photo style shot illustration using exposing red color",
+            "path" : "red_spalsh.jpg"
+        },
+        {
+            "cardName": "Calm and chill",
+            "description": "Made at first for training, It ended up to be one of my best and favorite.",
+            "path" : "cutness.jpg"
+        },
+        {
+            "cardName": "Carole and her miata",
+            "description": "No matter the question, the answer is always miata. My OC (Original Character) with her car a NA Miata.",
+            "path" : "miata.jpg"
+        },
+        {
+            "cardName": "Beauty in nature",
+            "description": "A Porsche 911 under some cherry blossom. beautifull scenary.",
+            "path" : "porsche.jpg"
+        },
+        {
+            "cardName": "Deep Purple",
+            "description": "Lately, the 911 992 Porsche turbo S has gain the reputation as a monster. A more scary illustration with the purple color",
+            "path" : "992_turbo.jpg"
+        },
+        {
+            "cardName": "Katheryn",
+            "description": "Some instant inspiration from Katheryn as a model.",
+            "path" : "katheryn.jpg"
+        },
+        {
+            "cardName": "Lightning fast",
+            "description": "A real track monster made by McLaren which has became my favorite supercar.",
+            "path" : "senna.jpg"
+        }
+    ],
+    "techno": {
+        "title": "Logiciels, langages & outils"
+    },
+    "projects": {
+        "title": "Mes Projets"
+    }
+}

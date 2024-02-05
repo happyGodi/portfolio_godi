@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { ref, computed, onBeforeMount } from 'vue';
+    import { ref, computed } from 'vue';
     import { RouterLink } from 'vue-router';
     import { useDarkModeStore } from '../stores/darkMode';
     import { useLanguages } from '@/stores/languages';
@@ -7,7 +7,6 @@
 
     const darkModeStore = useDarkModeStore()  
     const language = useLanguages()
-    const selectedLang = computed<any>(() => language.defaultLang)
     const isDark = computed<boolean>(() => darkModeStore.isDark)
     const iconSize = ref(24)
     const iconColor = computed<string>(() => darkModeStore.iconColor)
@@ -15,7 +14,6 @@
     const moonIconColor = computed<string>(() => darkModeStore.moonIconColor)
     let isExpanded = ref<boolean>(false)
    
-
     function switchDark (): void {
         darkModeStore.switchDark()
     }
@@ -55,7 +53,7 @@
                 </a>
             </li>
         </ul>
-        <RouterLink to="/" :class="['home', { homeDark: isDark}, { home_expanded : isExpanded}]"> <div class="home_text">{{selectedLang.home}}</div></RouterLink>
+        <RouterLink to="/" :class="['home', { homeDark: isDark}, { home_expanded : isExpanded}]"> <div class="home_text">{{ $t('nav.home')}}</div></RouterLink>
         <ul :class="['nav-items settings', { settings_expanded : isExpanded}]">
             <li :onclick="switchLight" :class="['nav-links light_mode', { light_mode_dark : isDark}]">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" :width="iconSize" :height="iconSize">

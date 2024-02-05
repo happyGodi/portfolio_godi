@@ -11,7 +11,7 @@
 
 <template>
     <div :class="['project', { project_dark : isDark}]">
-        <h1>My Projects</h1>
+        <h1>{{ $t('projects.title') }}</h1>
         <ul class="project_list" >
             <li class="project_item" v-for="(p, index) in projects" :key="index">
                 <img :src="'src/assets/projects/Assets/' + p.path" :alt="p.name" class="picture" >
