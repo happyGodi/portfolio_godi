@@ -3,8 +3,8 @@
 
 <template>
     <div class="techno">
-        <h1 class="title">{{ $tm('techno.title') }}</h1>       
-        <ul class="tech_list" v-for="(t, index) in $t('technoList')" :key="index">
+        <h1 class="title">{{ $t('techno.title') }}</h1>       
+        <ul class="tech_list" v-for="(t, index) in $tm('technoList')" :key="index">
             <li :class="['tech_el', { tech_el_even : ((index % 2) != 0)}]">
             <div class="picture">
                 <img :src="'src/assets/icons/' + $t(`technoList.${index}.path`)" :alt="$t(`technoList.${index}.name`)">
