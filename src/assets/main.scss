@@ -22,19 +22,23 @@
 h1, h2, h3, h4, h5, h6, p, a, li {
   font-family: hankenRound;
 }
-a,
+
 .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
 }
+a {
+  text-decoration: none;
+  color: $white;
+}
 
-@media (hover: hover) {
+/* @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
 
   }
-}
+} */
 
 /* @media (min-width: 1024px) {
   body {
