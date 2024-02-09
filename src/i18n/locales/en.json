@@ -65,7 +65,111 @@
     "techno": {
         "title": "Software, languages & tools"
     },
-    "projects": {
+    "project": {
         "title": "My Projects"
-    }
+    },
+    "projectList": [
+        {
+            "name": "My Portfolio",
+            "desc": "A project to showcase my skill and showcase my projects. I have made it using Vue 3 with typescript and SCSS. The data are stored in JSON files.",
+            "path": "portfolio.png"
+        },
+        {
+            "name": "Authentication API",
+            "desc": "This is mostly a backend project i made in my third year of college. An API for a college project made using JWT, Typescript, NodeJs, ExpressJs and MongoDb.",
+            "path": "auth_API.png"
+        }
+    ],
+    "technoList": [
+        {
+            "name": "Vue",
+            "desc": "Vue Js is a powerfull, light and handy web framework that i use with Composition API combined with Typescript",
+            "link": "https://vuejs.org/",
+            "path": "vue.png"
+        },
+        {
+            "name": "TypeScript",
+            "desc": "Basically Javascript with Types. I started using it because it is fun secure and easy to maintain than Js.",
+            "link": "https://www.typescriptlang.org/docs/",
+            "path": "typescript.png"
+        },
+        {
+            "name": "JavsScript",
+            "desc": "One of the most popular coding language for web development. An Object Oriented Programing language which was my first programing language.",
+            "link": "https://developer.mozilla.org/fr/docs/Web/JavaScript",
+            "path": "javascript.png"
+        },
+        {
+            "name": "Sass/Scss",
+            "desc": "A popular preprocessor of CSS that provides possibilities not included in CSS like functions, variable, etc... It can be very usefull for big project.",
+            "link": "https://sass-lang.com/documentation/",
+            "path": "sass.png"
+        },
+        {
+            "name": "Html 5",
+            "desc": "Hypertext Markup Language, One of the basics of web development.",
+            "link": "https://developer.mozilla.org/fr/docs/Web/HTML",
+            "path": "html.png"
+        },
+        {
+            "name": "Css 3",
+            "desc": "HTML5 's binomial. CSS or Cascading Style Sheet is a styling language that pairs to HTML to get stunning result in your website.",
+            "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            "path": "css.png"
+        },
+        {
+            "name": "Express Js",
+            "desc": "Express Js is a minimalistic NodeJs backend framework that i use to build web server for applications.",
+            "link": "https://devdocs.io/express/",
+            "path": "express.png"
+        },
+        {
+            "name": "Node Js",
+            "desc": "Node Js is a development environment that allows the execution of Javascript on the server side. That is why it is mostly used to create web servers.",
+            "link": "https://nodejs.org/docs/latest/api/",
+            "path": "nodeJs.png"
+        },
+        {
+            "name": "Less",
+            "desc": "Less is another CSS preprocessor like Scss/Sass. It provides the same possibilities but with few differences. I did learn it during my intership in 2023.",
+            "link": "https://lesscss.org/",
+            "path": "less.png"
+        },
+        {
+            "name": "MongoDB",
+            "desc": "A Database Management System (DBMS) for non-relational database. It unables unstructured data storage which can be confusing.",
+            "link": "https://www.mongodb.com/docs/",
+            "path": "mongodb.png"
+        },
+        {
+            "name": "MySQL",
+            "desc": "MySQL, opposite to MongoDb is a DBMS for relational databases. My very first DBMS.",
+            "link": "https://dev.mysql.com/doc/",
+            "path": "mysql.png"
+        },
+        {
+            "name": "Adobe Photoshop",
+            "desc": "Photoshop is a software from the Adobe suite. It is a professional and powerful software for image treatment. ",
+            "link": "https://helpx.adobe.com/photoshop/user-guide.html",
+            "path": "photoshop.png"
+        },
+        {
+            "name": "Adobe Illustrator",
+            "desc": "Illustrator, like photoshop is a software from the Adobe suite but unlike it, it is dedicated to graphic design and vector shapes. ",
+            "link": "https://helpx.adobe.com/illustrator/user-guide.html",
+            "path": "illustrator.png"
+        },
+        {
+            "name": "Clip Studio Paint",
+            "desc": "Clip Studio Paint is a dedicades drawing software tool which is one of the most complete and powerfull of its type.",
+            "link": "https://help.clip-studio.com/en-us/First_Topic.html",
+            "path": "csp.png"
+        },
+        {
+            "name": "MedibangPaint Pro",
+            "desc": "MedibangPaint Pro is another dedicades drawing software. It is free and powerfull enough to get you some amazing result.",
+            "link": "https://medibangpaint.com/en/",
+            "path": "medibangpaint.png"
+        }
+    ]
 }

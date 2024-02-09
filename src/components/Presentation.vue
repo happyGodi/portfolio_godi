@@ -81,7 +81,7 @@
         <div id="gallery" :class="['showroom', { showroom_dark: isDark}]">
             <h1 class="showroom_title"> {{ $t('presentation.gallery') }} </h1>
             <div class="cards">
-                <div class="slider" v-for="(c,i) in $t('cards')" :key="i" ref="cardRef">
+                <div class="slider" v-for="(c,i) in $tm('cards')" :key="i" ref="cardRef">
                     <Card
                         @mouseenter="hovering(i)" @mouseleave="notHover()" 
                         :class="['card', { shrink : (active && (currentId != i))}, { grow : (active && (currentId == i))}]"

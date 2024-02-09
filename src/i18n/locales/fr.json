@@ -65,7 +65,112 @@
     "techno": {
         "title": "Logiciels, langages & outils"
     },
-    "projects": {
+    "project": {
         "title": "Mes Projets"
-    }
+    },
+    
+    "projectList": [
+        {
+            "name": "Mon Portfolio",
+            "desc": "Un projet pour présenter mes capacités et également mes projets. J'ai crée ce projet en utilisant Vue 3 avec Typescript et SCSS. Les données sont stockés dans des fichiers JSON.",
+            "path": "portfolio.png"
+        },
+        {
+            "name": "Authentication API",
+            "desc": " Il s'agit d'un projet backend lors de ma trosième année universitaire. Un API pour un projet universitaire utilisant JWT, Typescript, NodeJs, Express et MongoDB.",
+            "path": "auth_API.png"
+        }
+    ],
+    "technoList": [
+        {
+            "name": "Vue",
+            "desc": "Vue JS est un framework web puissant et léger avec une bonne prise en main que j'utilise avec la Composition API combiné à Typescript.",
+            "link": "https://vuejs.org/",
+            "path": "vue.png"
+        },
+        {
+            "name": "TypeScript",
+            "desc": "Généralement, Javascript typé. J'ai commencé à l'utiliser d'abord pour la curiosité mais aussi sa sécurité et sa maintenance.",
+            "link": "https://www.typescriptlang.org/docs/",
+            "path": "typescript.png"
+        },
+        {
+            "name": "JavsScript",
+            "desc": "Un des langages de programmation web les plus populaires. Un langage de programmation Orienté Objet qui était mon premier langage.",
+            "link": "https://developer.mozilla.org/fr/docs/Web/JavaScript",
+            "path": "javascript.png"
+        },
+        {
+            "name": "Sass/Scss",
+            "desc": "Un preprocesseur de CSS populaire qui offre des possibilités absente dans CSS comme les fonctions, variables, etc... Il peut être très pratique pour de grand projet.",
+            "link": "https://sass-lang.com/documentation/",
+            "path": "sass.png"
+        },
+        {
+            "name": "Html 5",
+            "desc": "Hypertext Markup Language, Une des base du développement web.",
+            "link": "https://developer.mozilla.org/fr/docs/Web/HTML",
+            "path": "html.png"
+        },
+        {
+            "name": "Css 3",
+            "desc": "Le binôme de HTML5. CSS ou Cascading Style Sheet est un langage de style qui va de paire avec HTML pour obtenir de magnifiques résultat sur son site web.",
+            "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            "path": "css.png"
+        },
+        {
+            "name": "Express Js",
+            "desc": "Express Js est un framework backend minimaliste de NodeJs que j'utilise pour construire des serveur pour des applications.",
+            "link": "https://devdocs.io/express/",
+            "path": "express.png"
+        },
+        {
+            "name": "Node Js",
+            "desc": "Node Js est un environement de développement qui permet l'exécution de Javascript du côté serveur.",
+            "link": "https://nodejs.org/docs/latest/api/",
+            "path": "nodeJs.png"
+        },
+        {
+            "name": "Less",
+            "desc": "Less est un autre preprocesseur CSS comme SCSS/SASS. Il offre les mêmes fonctionalités à quelques différences près. J'ai appris à l'utiliser durant mon stage en 2023.",
+            "link": "https://lesscss.org/",
+            "path": "less.png"
+        },
+        {
+            "name": "MongoDB",
+            "desc": "Un système de gestion de base de donnée non relationnel. Il permet le stockage de données non-structurées ce qui peut prêter à confusion'.",
+            "link": "https://www.mongodb.com/docs/",
+            "path": "mongodb.png"
+        },
+        {
+            "name": "MySQL",
+            "desc": "A l'opposé de MongoDB, MySQL est un SGBD pour les base de donnée relationnelles. Il s'agit de mon premier SGBD.",
+            "link": "https://dev.mysql.com/doc/",
+            "path": "mysql.png"
+        },
+        {
+            "name": "Adobe Photoshop",
+            "desc": "Photoshop est un logiciel de la suite Adobe. Il s'agit d'un logiciel professionnel de traitement d'image. ",
+            "link": "https://helpx.adobe.com/photoshop/user-guide.html",
+            "path": "photoshop.png"
+        },
+        {
+            "name": "Adobe Illustrator",
+            "desc": "Illustrator, comme Photoshop est un logiciel de la suite Adobe mais réservé au design et aux images vectorielles.",
+            "link": "https://helpx.adobe.com/illustrator/user-guide.html",
+            "path": "illustrator.png"
+        },
+        {
+            "name": "Clip Studio Paint",
+            "desc": "Clip Studio Paint est un logiciel de dessin dédié qui est l'un des plus populaire et complet sur le marché.",
+            "link": "https://help.clip-studio.com/en-us/First_Topic.html",
+            "path": "csp.png"
+        },
+        {
+            "name": "MedibangPaint Pro",
+            "desc": "MedibangPaint Pro est un autre logiciel de dessin dédié. Il est gratuit et suffisament complet pour obtenir de très beaux résultats.",
+            "link": "https://medibangpaint.com/en/",
+            "path": "medibangpaint.png"
+        }
+    ]
 }

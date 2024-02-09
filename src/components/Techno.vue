@@ -1,25 +1,20 @@
 <script setup lang="ts">
-    import techno from '../assets/techno/techno.json'
-    import { ref } from 'vue';
-
-    const techs: Array<any> = techno
-    const iconSize = ref(24)
 </script>
 
 <template>
     <div class="techno">
-        <h1 class="title">{{ $t('techno.title') }}</h1>       
-        <ul class="tech_list" v-for="(t, index) in techs" :key="index">
+        <h1 class="title">{{ $tm('techno.title') }}</h1>       
+        <ul class="tech_list" v-for="(t, index) in $t('technoList')" :key="index">
             <li :class="['tech_el', { tech_el_even : ((index % 2) != 0)}]">
             <div class="picture">
-                <img :src="'src/assets/icons/' + t.path" :alt="t.name">
+                <img :src="'src/assets/icons/' + $t(`technoList.${index}.path`)" :alt="$t(`technoList.${index}.name`)">
             </div>
             <div :class="['box', { box_even : ((index % 2) != 0)}]">
-                <a :href="t.link" target="_blank" class="link">Read<br>docs?</a>
+                <a :href="$t(`technoList.${index}.link`)" target="_blank" class="link">Read<br>docs?</a>
             </div>
                 <div class="tech_el_desc">
-                    <h4>{{ t.name }}</h4>
-                    <p> {{ t.desc }}
+                    <h4>{{ $t(`technoList.${index}.name`) }}</h4>
+                    <p> {{ $t(`technoList.${index}.desc`) }}
                     </p>
                 </div>
             </li>
