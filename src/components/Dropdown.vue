@@ -97,7 +97,7 @@
                 z-index: -1;
             }
             .list_item_dark::after {
-                background-color: $dark;
+                background-color: $white;
             }
             .list-item:hover::after {
                 width: 100%;

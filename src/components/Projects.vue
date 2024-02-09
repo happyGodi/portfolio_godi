@@ -1,23 +1,32 @@
 <script setup lang="ts">
-    import projects from "../assets/projects/projects.json"
+    import projects from "../i18n/locales/en.json"
     import { ref, computed } from "vue";
     import { useDarkModeStore } from "@/stores/darkMode";
 
     const darkMode = useDarkModeStore()
     const isDark = computed<boolean>(() => darkMode.isDark)
-    const project: Array<any> = projects
+    const project: Array<any> = projects.projectList
+    let active = ref(false)
+    let currentId = ref(null)
 
+    function hovering(id: any): void {
+        active.value = true
+        currentId.value = id
+    }
+    function notHover() {
+        active.value = false
+    }
 </script>
 
 <template>
     <div :class="['project', { project_dark : isDark}]">
-        <h1>{{ $t('projects.title') }}</h1>
-        <ul class="project_list" >
-            <li class="project_item" v-for="(p, index) in projects" :key="index">
-                <img :src="'src/assets/projects/Assets/' + p.path" :alt="p.name" class="picture" >
-                <h4 class="title">{{ p.name }}</h4>
+        <h1>{{ $t('project.title') }}</h1>
+        <ul class="project_list">
+            <li v-for="(p, index) in $tm('projectList')" :key="index" @mouseenter="hovering(index)" @mouseleave="notHover()"  :class="['project_item', { shrink : (active && (currentId != index))}, { grow : (active && (currentId == index))}]"  >
+               <img :src="'src/assets/projects/Assets/' + $t(`projectList.${index}.path`)" :alt="$t(`projectList.${index}.name`)" class="picture" >
+                <h4 class="title">{{ $t(`projectList.${index}.name`) }}</h4>
                 <p class="desc">
-                    {{ p.desc }}
+                    {{ $t(`projectList.${index}.desc`) }}
                 </p>
             </li>
         </ul>
@@ -74,7 +83,7 @@
                 overflow: hidden;
                 margin: 1rem;
                 position: relative;
-                transition: cursor 0.25s ease-in-out, transform 0.25s ease-in-out;
+                transition: cursor 0.25s ease-in-out, transform 0.25s ease-in-out, filter 0.25s ease-in-out;
                 background-color: $dark;
 
                 .picture {
@@ -104,15 +113,16 @@
                     mix-blend-mode: difference;
                 }
             }
-
-            .project_item:hover {
+            .project_item:hover{
                 cursor: pointer;
-                transform: scale(1.1);
-                
             }
-            .project_item:hover ~ .project_item:not(:hover){
+
+            .shrink {
                 transform: scale(0.9);
-     
+                filter: grayscale(100%) blur(3px);
+            }
+            .grow {
+                transform: scale(1.1);
             }
         }
         
