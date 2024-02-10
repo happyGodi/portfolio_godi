@@ -95,7 +95,9 @@
             </div>
         </div>
         <Techno/>
-        <Projects id="projects"/>
+        <Transition>
+            <Projects id="projects"/>
+        </Transition>
         <Footer/>
     </div>   
 </template>
@@ -125,7 +127,9 @@
   background-color: $grey;
   border-radius: 10px;
 }
-
+.v-enter-active, .v-leave-active {
+    transition: all 0.3s ease-in-out;
+}
     .landing_page_loading {
         overflow: hidden;
     }
@@ -292,7 +296,9 @@
                 font-size: 164px;
                 font-weight: bold;
                 font-family: glympsePeriyotman;
+                color: $dark;
                 filter: invert(100%);
+                -webkit-filter: invert(100%);
                 mix-blend-mode: difference;
                 z-index: 1;
             }
@@ -311,7 +317,9 @@
                         height: fit-content;
                         padding: 3px;
                         font-size: 21px;
+                        color: $dark;
                         filter: invert(100%);
+                        -webkit-filter: invert(100%);
                         mix-blend-mode: difference;
                         transition: font-size 0.25s ease-in-out, cursor 0.25s ease-in-out;
                         position: relative;
@@ -334,6 +342,7 @@
                         z-index: -1;
                         background-color: $white;
                         filter: invert(100%);
+                        -webkit-filter: invert(100%);
                         mix-blend-mode: difference;
                     }
                     h4:hover::after {
@@ -343,10 +352,12 @@
                     .card {
                         transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
                         border: 12px solid $grey;
+                        z-index: 1;
                     }
                     .shrink {
                         transform: scale(0.9);
                         filter: grayscale(100%) blur(3px);
+                        -webkit-filter: grayscale(100%) blur(3px);
                     }
                     .grow {
                         transform: scale(1.1);
@@ -365,7 +376,7 @@
             background-color: $dark;
             z-index: -1;
         }
-        .showroom_dark::before {
+        .showroom_dark::after {
             content: "";
             position: absolute;
             top: 0%;
@@ -438,11 +449,11 @@
             .presentation {
                 @include setFlex(center, flex-start, column);
                 min-height: 100vh;
-                margin-top: 0;
+                margin: auto;
                 .content_left {
                     @include setFlex(flex-end, flex-start, column); 
                     width: 100%;
-                    height: calc(95vh - 2rem);
+                    height: 100%;
                    
                     .left_title {
                         font-size: 24px;
@@ -460,7 +471,7 @@
                 .content_right {
                     @include setFlex(center, flex-start, column);
                     width: 100%;
-                    height: 95vh;
+                    height: 100vh;
                     .right_title {
                         font-size: 24px;
                         width: 80%;
@@ -480,6 +491,7 @@
                 min-height: 100vh;
                 .showroom_title {
                     font-size: 72px;
+                   
                 }
                 .cards {
                     width: calc((300px *1) + (1rem *2));

@@ -53,7 +53,9 @@
             width: fit-content;
             height: fit-content;
             padding: 6px;
+            color: $dark;
             filter: invert(100%);
+            -webkit-filter: invert(100%);
             mix-blend-mode: difference;
         }
         h1::after {
@@ -100,6 +102,7 @@
                     font-size: 24px;
                     font-weight: bold;
                     filter: invert(100%);
+                    -webkit-filter: invert(100%);
                     mix-blend-mode: difference;
 
                 }
@@ -110,6 +113,7 @@
                     font-size: 18px;
                     text-align: justify;
                     filter: invert(100%);
+                    -webkit-filter: invert(100%);
                     mix-blend-mode: difference;
                 }
             }
@@ -120,6 +124,7 @@
             .shrink {
                 transform: scale(0.9);
                 filter: grayscale(100%) blur(3px);
+                -webkit-filter: grayscale(100%) blur(3px);
             }
             .grow {
                 transform: scale(1.1);

@@ -94,6 +94,10 @@
                 height: fit-content;
                 padding: 6px;
                 text-align: center;
+                filter: invert(100%);
+                -webkit-filter: invert(100%);
+                mix-blend-mode: difference;
+                color: $dark;
             }
         }
         .infos:hover {
