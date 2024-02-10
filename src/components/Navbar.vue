@@ -86,7 +86,7 @@
 @import "../scss/variables";
 
     .navbar {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         @include setFlex(space-between, center);
@@ -137,9 +137,9 @@
     @media screen and (max-width: 768px) {
         .navbar {
             @include setFlex(flex-start, flex-start, column);
-            position: relative;
+            position: fixed;
             width: 97.5%;
-            height: 5vh;
+            height: 50px;
             border-bottom: 2px solid $dark;
             background-color: $white;
             transition: height 0.3s ease-in-out, min-height 0.3s ease-in-out;
@@ -150,7 +150,7 @@
                 top: 0;
                 left: 0;
                 width: fit-content;
-                height: 5vh;
+                height: 50px;
                 padding: 0.5rem 1rem;
                 transition: none;
             }

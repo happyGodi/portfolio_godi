@@ -76,24 +76,34 @@
     @keyframes first {
         0% {  
             filter: blur(7px);
+            -webkit-filter: blur(7px);
         }
         50% {
             opacity: 1;
             filter: blur(0px);
+            -webkit-filter: blur(0px);
         }
-        93.5% { filter: blur(7px);}
+        93.5% { 
+            filter: blur(7px);
+            -webkit-filter: blur(7px);
+        }
         100% { opacity: 0; }
     }
 
     @keyframes second {
         0% { 
             filter: blur(7px);
+            -webkit-filter: blur(7px);
         }
         50% {
             opacity: 1;
             filter: blur(0px);
+            -webkit-filter: blur(0px);
         }
-        93.5% { filter: blur(7px);}
+        93.5% { 
+            filter: blur(7px);
+            -webkit-filter: blur(0px);
+        }
         100% { opacity: 0; }
     }
 

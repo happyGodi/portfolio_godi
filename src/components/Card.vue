@@ -25,7 +25,7 @@
 @import "../scss/variables";
 
   ::-webkit-scrollbar {
-        background-color: var(--vt-c-black);
+        background-color: $dark;
         width: 5px;
         height: 5px;
         padding: 0px;
@@ -33,11 +33,11 @@
         border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb {
-        background-color: var(--vt-c-white-low);
+        background-color: $white-low;
         border-radius: 5px;
     }
     ::-webkit-scrollbar-track {
-        background-color: var(--vt-c-black);
+        background-color: $dark;
         border-radius: 5px;
         
     }
@@ -46,8 +46,8 @@
         width: 300px;
         height: calc(400px - 1rem);
         margin: 1rem;
-        background-color: white;
-        color: var(--vt-c-black);
+        background-color: $white;
+        color: $dark;
         position: relative;
         transition: all 0.35s ease-in-out;
 
