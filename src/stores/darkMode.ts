@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 
 export const useDarkModeStore: any = defineStore('darkMode', () => {
-    const isDark = ref<boolean>(true)
+    const isDark = ref<boolean>(false)
     const iconColor = ref('#181818')
     const sunIconColor = ref('#ffd100')
     const moonIconColor = ref('#181818')

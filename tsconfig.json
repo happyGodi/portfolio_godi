@@ -8,7 +8,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.scss"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.scss, src/i18/**/*"],
   "references": [
     {
       "path": "./tsconfig.node.json"
