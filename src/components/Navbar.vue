@@ -2,11 +2,9 @@
     import { ref, computed } from 'vue';
     import { RouterLink } from 'vue-router';
     import { useDarkModeStore } from '../stores/darkMode';
-    import { useLanguages } from '@/stores/languages';
     import Dropdown from './Dropdown.vue';
 
     const darkModeStore = useDarkModeStore()  
-    const language = useLanguages()
     const isDark = computed<boolean>(() => darkModeStore.isDark)
     const iconSize = ref(24)
     const iconColor = computed<string>(() => darkModeStore.iconColor)
@@ -35,6 +33,7 @@
                         :fill="iconColor" />
                     </svg>
                 </a>
+                <h4 :class="['title', { title_dark : isDark}]"> Godi Godi</h4>
             </li>
             <li :class="['nav-links instagram', { instagram_dark : isDark}]">
                 <a href="https://www.instagram.com/happy_godiii/" target="_blank">
@@ -43,6 +42,7 @@
                         :fill="iconColor" />
                     </svg>
                 </a>
+                <h4 :class="['title', { title_dark : isDark}]">@godi_godiii</h4>
             </li>
             <li :class="['nav-links github', { github_dark : isDark}]">
                 <a href="https://github.com/happyGodi" target="_blank">
@@ -51,6 +51,7 @@
                         :fill="iconColor" />
                     </svg>
                 </a>
+                <h4 :class="['title', { title_dark : isDark}]">happyGodi</h4>
             </li>
         </ul>
         <RouterLink to="/" :class="['home', { homeDark: isDark}, { home_expanded : isExpanded}]"> <div class="home_text">{{ $t('nav.home')}}</div></RouterLink>
@@ -60,12 +61,14 @@
                     <path d="M15 3L15 8L17 8L17 3 Z M 7.5 6.09375L6.09375 7.5L9.625 11.0625L11.0625 9.625 Z M 24.5 6.09375L20.9375 9.625L22.375 11.0625L25.90625 7.5 Z M 16 9C12.144531 9 9 12.144531 9 16C9 19.855469 12.144531 23 16 23C19.855469 23 23 19.855469 23 16C23 12.144531 19.855469 9 16 9 Z M 16 11C18.773438 11 21 13.226563 21 16C21 18.773438 18.773438 21 16 21C13.226563 21 11 18.773438 11 16C11 13.226563 13.226563 11 16 11 Z M 3 15L3 17L8 17L8 15 Z M 24 15L24 17L29 17L29 15 Z M 9.625 20.9375L6.09375 24.5L7.5 25.90625L11.0625 22.375 Z M 22.375 20.9375L20.9375 22.375L24.5 25.90625L25.90625 24.5 Z M 15 24L15 29L17 29L17 24Z" 
                     :fill="sunIconColor" />
                 </svg>
+                <h4 :class="['title', { title_dark : isDark}]">{{ $t('nav.light') }}</h4>
             </li>
             <li :onclick="switchDark" :class="['nav-links dark_mode', { dark_mode_dark : isDark}]">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" :width="iconSize" :height="iconSize">
                     <path d="M22,21c-6.627,0-12-5.373-12-12c0-1.95,0.475-3.785,1.3-5.412C6.485,5.148,3,9.665,3,15c0,6.627,5.373,12,12,12 c4.678,0,8.72-2.682,10.7-6.588C24.534,20.79,23.292,21,22,21z" 
                     :fill="moonIconColor" />
                 </svg>
+                <h4 :class="['title', { title_dark : isDark}]"> {{ $t('nav.dark')}} </h4>
             </li>
             <li :class="['nav-items lang', { lang_dark : isDark}]">
                 <Dropdown/> 
@@ -123,6 +126,14 @@
             li {
                 padding: 1rem;
                 list-style-type: none;
+
+                .title {
+                    display: none;
+                }
+
+                .title_dark {
+                    color: $white;
+                }
             }
         }
         .expand_button {
@@ -136,12 +147,13 @@
     
     @media screen and (max-width: 768px) {
         .navbar {
-            @include setFlex(flex-start, flex-start, column);
+            @include setFlex(flex-end, center, column);
             position: fixed;
             width: 97.5%;
             height: 50px;
             border-bottom: 2px solid $dark;
             background-color: $white;
+            padding: 2rem 0;
             transition: height 0.3s ease-in-out, min-height 0.3s ease-in-out;
 
             .home {
@@ -150,80 +162,30 @@
                 top: 0;
                 left: 0;
                 width: fit-content;
-                height: 50px;
+                height: 70px;
                 padding: 0.5rem 1rem;
                 transition: none;
             }
             .links {
-                @include setFlex(flex-start, flex-start, column);
-                position: absolute;
-                top: 50%;
-                left: 0;
-                height: 30%;
-                min-width: 100%;
-                padding: 1rem 2rem;
-                opacity: 0;
+                @include setFlex(center, center, row);
+                position: relative;
+                height: auto;
+                width: 100%;
+                padding: 1rem;
+                margin: 1rem;
                 pointer-events: none;
                 transition: opacity 0.3s ease-in-out, pointer-events 0.3s ease-in-out;
+                
+                .nav-links {
+                    @include setFlex(center, center, column);
+                    width: 130px;
+                    height: auto;
+                    font-size: 14px;
+                    margin: 0.25rem;
 
-                .facebook::after {
-                    content: "Godi Godi";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
-                }
-                .instagram::after {
-                    content: "godi_godiii";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
-                }
-                .github::after {
-                    content: "happyGodi";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
-                }
-
-
-                .facebook_dark::after {
-                    content: "Godi Godi";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
-                    color: $white;
-                }
-                .instagram_dark::after {
-                    content: "godi_godiii";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
-                    color: $white;
-                }
-                .github_dark::after {
-                    content: "happyGodi";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
-                    color: $white;
+                    .title {
+                        display: inline-block;
+                    }
                 }
             }
 
@@ -232,57 +194,24 @@
                 opacity: 1;
             }
             .settings {
-                @include setFlex(flex-start, flex-start, column);
-                position: absolute;
-                top: 20%;
-                left: 0;
-                min-width: 100%;
-                height: fit-content;
-                padding: 1rem 2rem;
-                opacity: 0;
+                @include setFlex(center, center, row);
+                width: 100%;
+                height: auto;
+                padding: 1rem;
+                margin: 1rem;
                 pointer-events: none;
                 transition: opacity 0.3s ease-in-out, pointer-events 0.3s ease-in-out;
 
-                .light_mode::after {
-                    content: "Light mode";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
+                .nav-links {
+                    @include setFlex(center, center, column);
+                    width: 130px;
+                    height: auto;
+                    font-size: 14px;
+                    margin: 0.25rem;
+                    .title {
+                        display: inline-block;
+                    }
                 }
-                .dark_mode::after {
-                    content: "Dark mode";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
-                }
-
-                .light_mode_dark::after {
-                    content: "Light mode";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
-                    color: $white;
-                }
-                .dark_mode_dark::after {
-                    content: "Dark mode";
-                    display: inline-block;
-                    height: 100%;
-                    width: fit-content;
-                    font-size: 18px;
-                    margin-left: 12px;
-                    margin-top: auto;
-                    color: $white;
-                }
-
             }
 
             
@@ -294,7 +223,7 @@
             .expand_button {
                 @include setFlex(center, center);
                 position: absolute;
-                top: 5px;
+                top: 15px;
                 right: 0;
                 width: 35px;
                 height: 35px;

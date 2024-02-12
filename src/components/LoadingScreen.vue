@@ -1,16 +1,9 @@
 <script setup lang="ts">
     import { computed } from 'vue';
     import { useLoadingScreen } from '../stores/loadingScreen';
-    import { useLanguages } from '@/stores/languages';
 
     const loader = useLoadingScreen()
-    const language = useLanguages()
     const isLoaded = computed<boolean>(() => loader.isLoading )
-    const selectedLang = computed<any>(() => language.lang)
-
-    function translate(l: string) {
-        language.t(l)
-    }
 </script>
 
 <template>

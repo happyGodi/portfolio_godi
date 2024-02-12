@@ -1,10 +1,9 @@
 <script setup lang="ts">
     import { useDarkModeStore } from '@/stores/darkMode';
-    import { useLanguages } from '@/stores/languages';
     import { ref, computed } from 'vue';
+    import i18n from '@/i18n/i18n';
 
     const darkMode = useDarkModeStore()
-    const languages = useLanguages()
     const isDark = computed<boolean>(() => darkMode.isDark)
     const isOpen = ref<boolean>(false)
     const lang = ref([
@@ -16,7 +15,7 @@
         isOpen.value = !isOpen.value
     }
     function selectLang(lang: string): void {
-        languages.changeLocal(lang)
+        i18n.global.locale.value = lang
     }
 
 </script>
@@ -122,8 +121,13 @@
     }
 
     @media screen and (max-width: 768px) {
-        .lang_name {
-           display: block;
+        .sub-menu {
+            position: absolute;
+            background-color: $white;
+            top: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
         }
     }
 </style>
