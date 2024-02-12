@@ -46,11 +46,9 @@
         width: 300px;
         height: calc(400px - 1rem);
         margin: 1rem;
-        background-color: $white;
-        color: $dark;
         position: relative;
         transition: all 0.35s ease-in-out;
-
+        
         .picture {
             width: 100%;
             max-width: 100%;

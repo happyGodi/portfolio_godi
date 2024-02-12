@@ -149,14 +149,12 @@
             @include setFlex(flex-start, center);
             position: relative;
             width: 100%;
-            height: 100%;
-            min-height: calc(100vh - 1rem);
+            height: 100vh;
 
             .content_left {
                 @include setFlex(center, flex-start, column);
                 width: 50%;
                 height: 100vh;
-                min-height: 750px;
                 padding: 2rem;
                 transition: background-color 0.2s linear;
 
@@ -285,8 +283,19 @@
             position: relative;
             @include setFlex(center, center, column);
             width: 100%;
-            height: 100vh;
+            height: 100lvh;
             padding: 1rem 1.25%;
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 50%;
+                height: 100%;
+                background-color: $dark;
+            }
 
             .showroom_title {
                 width: fit-content;
@@ -310,8 +319,11 @@
                 overflow-x: auto;
                 overflow-y: hidden;
                 padding: 1rem;
+                position: relative;
+                
                 .slider{
                     @include setFlex(flex-start, center, column);
+                    position: relative;
                     h4 {
                         width: fit-content;
                         height: fit-content;
@@ -322,15 +334,13 @@
                         -webkit-filter: invert(100%);
                         mix-blend-mode: difference;
                         transition: font-size 0.25s ease-in-out, cursor 0.25s ease-in-out;
-                        position: relative;
-                        z-index: 1;
-                        transition: all 0.25s linear;
-                        overflow: hidden;
                     }
                     h4:hover{
                         cursor: pointer;
                     }
-                    h4::after {
+                    /* 
+                    i'm not sure yet so i made it a comment for now
+                    h4::after { 
                         content: "";
                         position: absolute;
                         width: 0;
@@ -339,7 +349,6 @@
                         bottom: 0;
                         transition-duration: 0.25s;
                         height: 2px;
-                        z-index: -1;
                         background-color: $white;
                         filter: invert(100%);
                         -webkit-filter: invert(100%);
@@ -347,7 +356,7 @@
                     }
                     h4:hover::after {
                         width: 100%;
-                    }
+                    } */
 
                     .card {
                         transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
@@ -366,26 +375,18 @@
                 }
             }
         }
-        .showroom::before {
+        .showroom_dark {
+            &::before {
             content: "";
             position: absolute;
             top: 0%;
-            left: 0%;
-            width: 50%;
-            height: 100%;
-            background-color: $dark;
-            z-index: -1;
-        }
-        .showroom_dark::after {
-            content: "";
-            position: absolute;
-            top: 0%;
-            left: 0%;
+            right: 0%;
             width: 50%;
             height: 100%;
             background-color: $white;
-            z-index: 0;
         }
+        }
+        
     }
     .landing_page_dark {
         background-color: $dark;
@@ -447,13 +448,15 @@
     @media screen and (max-width: 768px) {
         .landing_page {
             .presentation {
-                @include setFlex(center, flex-start, column);
-                min-height: 100vh;
-                margin: auto;
+                @include setFlex(flex-start, center, column);
+                width: 100%;
+                height: 200vh;
+                margin: 0;
                 .content_left {
                     @include setFlex(flex-end, flex-start, column); 
                     width: 100%;
-                    height: 100%;
+                    height: 100vh;
+                    padding-bottom: 10vh;
                    
                     .left_title {
                         font-size: 24px;
