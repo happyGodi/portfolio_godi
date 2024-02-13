@@ -110,9 +110,10 @@
             background-color: $dark;
             outline: 5px solid $white;
             color: $white;
-        }
-        .home:hover {
-            cursor: pointer;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
         .homeDark {
             outline: 5px solid $dark;

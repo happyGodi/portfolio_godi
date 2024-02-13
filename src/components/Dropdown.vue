@@ -46,9 +46,9 @@
             font-size: 18px;
             font-weight: bold;
             padding: 1rem;
-        }
-        .active-item:hover {
-            cursor: pointer;
+            &:hover {
+                cursor: pointer;
+            }
         }
         .dark {
             color: $white-low;
@@ -72,17 +72,23 @@
                 z-index: 1;
                 border: none;
                 outline: none;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $white;
+                }
             }
             .list_item_dark {
                 color: $white-low;
-            }
-            .list-item:hover {
-                cursor: pointer;
-                color: $white;
-            }
-            .list_item_dark:hover {
-                cursor: pointer;
-                color: $dark;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $dark;
+                }
+
+                &::after {
+                    background-color: $white;
+                }
             }
             .list-item::after {
                 content: '';
@@ -94,12 +100,10 @@
                 background-color: $dark;
                 transition: width 0.2s linear;
                 z-index: -1;
-            }
-            .list_item_dark::after {
-                background-color: $white;
-            }
-            .list-item:hover::after {
-                width: 100%;
+
+                &:hover::after {
+                    width: 100%;
+                }
             }
         }
         .sub_menu_dark {
