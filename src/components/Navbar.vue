@@ -100,6 +100,7 @@
         margin-bottom: 1rem;
         z-index: 10;
         background-color: $white;
+        overflow: hidden;
 
         .home {
             @include setFlex(center, center);
@@ -115,7 +116,7 @@
         }
         .homeDark {
             outline: 5px solid $dark;
-            background-color: $white-low;
+            background-color: $white;
             color: $dark;
         }
         ul {
@@ -147,7 +148,7 @@
     
     @media screen and (max-width: 768px) {
         .navbar {
-            @include setFlex(flex-end, center, column);
+            @include setFlex(center, center, column);
             position: fixed;
             width: 97.5%;
             height: 50px;

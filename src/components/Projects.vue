@@ -154,17 +154,22 @@
     }
 
     @media screen and (max-width: 768px) {
+
         .project {
             h1 {
                 font-size: 24px;
                 font-weight: bold;
             }
             .project_list {
+                @include setFlex(center, flex-start, row);
                 width: 100%;
                 padding: 6px;
+                max-height: calc((400px * 1) + (1rem * 2));
+                overflow-x: hidden;
+                overflow-y: auto;
 
                 .project_item {
-                    height: 300px;
+                    height: 400px;
                     .title {
                         font-size: 18px;
                     }
