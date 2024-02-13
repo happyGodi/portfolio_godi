@@ -57,16 +57,17 @@
             filter: invert(100%);
             -webkit-filter: invert(100%);
             mix-blend-mode: difference;
-        }
-        h1::after {
-            content: "";
-            width: 50%;
-            height: 3px;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: $dark;
+
+            &::after {
+                content: "";
+                width: 50%;
+                height: 3px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $dark;
+            }
         }
 
         .project_list {
@@ -88,6 +89,9 @@
                 transition: cursor 0.25s ease-in-out, transform 0.25s ease-in-out, filter 0.25s ease-in-out;
                 background-color: $dark;
 
+                &:hover{
+                    cursor: pointer;
+                }
                 .picture {
                     width: 100%;
                     height: 40%;
@@ -116,9 +120,6 @@
                     -webkit-filter: invert(100%);
                     mix-blend-mode: difference;
                 }
-            }
-            .project_item:hover{
-                cursor: pointer;
             }
 
             .shrink {

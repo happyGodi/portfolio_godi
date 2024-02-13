@@ -99,28 +99,45 @@
                 mix-blend-mode: difference;
                 color: $dark;
             }
-        }
-        .infos:hover {
-            cursor: pointer;
-        }
-        .infos::after {
-            content: "";
-            width: 0;
-            height: 2px;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.25s ease-in-out;
-            background-color: $white;
-        }
-        .infos:hover::after {
-            width: 60%;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &::after {
+                content: "";
+                width: 0;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: width 0.25s ease-in-out;
+                background-color: $white;
+            }
+
+            &:hover::after {
+                width: 60%;
+            }
         }
     }
     .footer_dark {
         color: $dark;
         background-color: $white;
+
+        .infos {
+            &::after {
+                content: "";
+                width: 0;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: width 0.25s ease-in-out;
+                background-color: $dark;
+            }
+        }
     }
 
     @media screen and (max-width:1024px) {
