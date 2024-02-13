@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { ref, computed } from 'vue';
-    import { RouterLink } from 'vue-router';
+    import { RouterLink, useRouter } from 'vue-router';
     import { useDarkModeStore } from '../stores/darkMode';
     import Dropdown from './Dropdown.vue';
 
@@ -11,6 +11,7 @@
     const sunIconColor = computed<string>(() => darkModeStore.sunIconColor)
     const moonIconColor = computed<string>(() => darkModeStore.moonIconColor)
     let isExpanded = ref<boolean>(false)
+    const router = useRouter()
    
     function switchDark (): void {
         darkModeStore.switchDark()
@@ -20,6 +21,13 @@
     }
     function expand(): void {
         isExpanded.value = !isExpanded.value
+    }
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+        router.push('/top')
     }
 </script>
 
@@ -54,7 +62,7 @@
                 <h4 :class="['title', { title_dark : isDark}]">happyGodi</h4>
             </li>
         </ul>
-        <RouterLink to="/" :class="['home', { homeDark: isDark}, { home_expanded : isExpanded}]"> <div class="home_text">{{ $t('nav.home')}}</div></RouterLink>
+        <RouterLink to="/top" @click="scrollToTop()" :class="['home', { homeDark: isDark}, { home_expanded : isExpanded}]"> <div class="home_text">{{ $t('nav.home')}}</div></RouterLink>
         <ul :class="['nav-items settings', { settings_expanded : isExpanded}]">
             <li :onclick="switchLight" :class="['nav-links light_mode', { light_mode_dark : isDark}]">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" :width="iconSize" :height="iconSize">
@@ -100,12 +108,11 @@
         margin-bottom: 1rem;
         z-index: 10;
         background-color: $white;
-        overflow: hidden;
 
         .home {
             @include setFlex(center, center);
             width: fit-content;
-            height: 130%;
+            height: 120%;
             padding: 1rem 2rem;
             background-color: $dark;
             outline: 5px solid $white;
@@ -157,7 +164,7 @@
             background-color: $white;
             padding: 2rem 0;
             transition: height 0.3s ease-in-out, min-height 0.3s ease-in-out;
-
+            overflow: hidden;
             .home {
                 @include setFlex(center, center);
                 position: absolute;

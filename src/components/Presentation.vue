@@ -53,6 +53,7 @@
     <div :class="['landing_page', { landing_page_loading : isLoading}, { landing_page_dark : isDark }]">
         <Navbar/>
         <div class="presentation">
+            <img src="../assets/background/godi_portrait.jpg" class="picture">
             <div :class="['content_left', { content_left_dark: isDark}]">
                 <h1 :class="['left_title', {left_title_dark: isDark}]">{{ $t('presentation.greeting') }}</h1>
                 <h1 :class="['left_title', {left_title_dark: isDark}]">{{ $t('presentation.names')}}</h1>
@@ -131,6 +132,7 @@
 .v-enter-active, .v-leave-active {
     transition: all 0.3s ease-in-out;
 }
+
     .landing_page_loading {
         overflow: hidden;
     }
@@ -146,11 +148,33 @@
         padding: 1rem 1.25%;
         margin: 0 ;
         position: relative;
+        scroll-behavior: smooth;
         .presentation {
             @include setFlex(flex-start, center);
             position: relative;
             width: 100%;
             height: 100vh;
+
+            .picture {
+                width: 500px;
+                height: 600px;
+                object-fit: cover;
+                object-position: center;
+                background-color: $grey;
+                color: $white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50% ,-50%); //X, Y
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);// Left, right
+                filter: grayscale(100%);
+                transition: filter 0.25s ease-in-out, cursor 0.25s ease-in-out;
+
+                &:hover{
+                    filter: grayscale(0%);
+                    cursor: pointer;
+                }
+            }
 
             .content_left {
                 @include setFlex(center, flex-start, column);
@@ -474,6 +498,12 @@
     
     @media screen and (max-width: 1280px) {
         .landing_page {
+            .presentation {
+                .picture {
+                    width: 300px;
+                    height: 350px;
+                }
+            }
             .showroom {
                 .cards {
                     width: calc((200px *4) + (1rem *8));
@@ -532,6 +562,14 @@
                 width: 100%;
                 height: 200vh;
                 margin: 0;
+
+                .picture {
+                    width: 250px;
+                    height: 300px;
+                    top: 5%;
+                    left: 50%;
+                    transform: translate(-50%);
+                }
                 .content_left {
                     @include setFlex(flex-end, flex-start, column); 
                     width: 100%;
