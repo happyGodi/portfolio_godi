@@ -16,7 +16,8 @@
         "gallery": "GALLERY",
         "project": "PROJECTS",
         "next": "And also,",
-        "artistNames": "I'm a Graphic artist, named HappyGodi."
+        "artistNames": "I'm a Graphic artist, named HappyGodi.",
+        "contact": "Wanna contact me?"
     },
     "loader": {
         "hello": "Ohya!",
@@ -80,6 +81,11 @@
             "name": "Authentication API",
             "desc": "This is mostly a backend project i made in my third year of college. An API for a college project made using JWT, Typescript, NodeJs, ExpressJs and MongoDb.",
             "path": "auth_API.png"
+        },
+        {
+            "name": "To Do API",
+            "desc": "This is an API for To Do app. It was basically created for learning a new web framework with a backend that uses MongoDb, Express, JWT and NodeJs. It is free to use.",
+            "path": "toDo_API.png"
         }
     ],
     "technoList": [
