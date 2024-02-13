@@ -16,7 +16,8 @@
         "gallery": "GALLERIE",
         "project": "PROJETS",
         "next": "Et aussi,",
-        "artistNames": "Je suis artiste graphique sous le nom HappyGodi."
+        "artistNames": "Je suis artiste graphique sous le nom HappyGodi.",
+        "contact": "Me contacter?"
     },
     "loader": {
         "hello": "Bonjour!",
@@ -78,9 +79,14 @@
             "path": "portfolio.png"
         },
         {
-            "name": "Authentication API",
+            "name": "API d'authentication",
             "desc": " Il s'agit d'un projet backend lors de ma trosième année universitaire. Un API pour un projet universitaire utilisant JWT, Typescript, NodeJs, Express et MongoDB.",
             "path": "auth_API.png"
+        },
+        {
+            "name": "API To Do",
+            "desc": "Il s'agit d'un API pour une application To Do. Son but est juste d'avoir un API de To Do disponible pour l'apprentissage d'un nouvel framework web. J'ai utilisé NodeJs, ExpressJs, MongoDB et JWT et il est à usage gratuit.",
+            "path": "toDo_API.png"
         }
     ],
     "technoList": [

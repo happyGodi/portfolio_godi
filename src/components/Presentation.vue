@@ -57,13 +57,16 @@
                 <h1 :class="['left_title', {left_title_dark: isDark}]">{{ $t('presentation.greeting') }}</h1>
                 <h1 :class="['left_title', {left_title_dark: isDark}]">{{ $t('presentation.names')}}</h1>
                 <p :class="['description', {description_dark: isDark}]">{{ $t('presentation.description')}}</p>
-                <a href="#projects" :class="[isDark ? 'project_dark' : 'project']" :onMouseenter="lightColor" :onMouseleave="resetColor">
-                    {{ $t('presentation.project') }}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" :width="iconSize" :height="iconSize">
-                        <path d="M29.84375 13.09375C29.066406 13.167969 28.402344 13.691406 28.148438 14.429688C27.890625 15.171875 28.089844 15.992188 28.65625 16.53125L35.125 23L10 23C9.9375 22.996094 9.875 22.996094 9.8125 23C8.707031 23.050781 7.855469 23.988281 7.90625 25.09375C7.957031 26.199219 8.894531 27.050781 10 27L35.125 27L28.625 33.46875C27.839844 34.253906 27.839844 35.527344 28.625 36.3125C29.410156 37.097656 30.683594 37.097656 31.46875 36.3125L41.34375 26.40625L42.78125 25L41.34375 23.59375L31.46875 13.6875C31.046875 13.253906 30.449219 13.035156 29.84375 13.09375Z" 
-                            :fill="buttonIconOnHoverColor" />
-                    </svg>
-                </a>
+                <div class="buttons">
+                    <a href="#projects" :class="[isDark ? 'project_dark' : 'project']" :onMouseenter="lightColor" :onMouseleave="resetColor">
+                        {{ $t('presentation.project') }}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" :width="iconSize" :height="iconSize">
+                            <path d="M29.84375 13.09375C29.066406 13.167969 28.402344 13.691406 28.148438 14.429688C27.890625 15.171875 28.089844 15.992188 28.65625 16.53125L35.125 23L10 23C9.9375 22.996094 9.875 22.996094 9.8125 23C8.707031 23.050781 7.855469 23.988281 7.90625 25.09375C7.957031 26.199219 8.894531 27.050781 10 27L35.125 27L28.625 33.46875C27.839844 34.253906 27.839844 35.527344 28.625 36.3125C29.410156 37.097656 30.683594 37.097656 31.46875 36.3125L41.34375 26.40625L42.78125 25L41.34375 23.59375L31.46875 13.6875C31.046875 13.253906 30.449219 13.035156 29.84375 13.09375Z" 
+                                :fill="buttonIconOnHoverColor" />
+                        </svg>
+                    </a>
+                    <a href="#footer" :class="['about', { about_dark : isDark }]">{{ $t('presentation.contact') }}</a>
+                </div>
             </div>
             <div :class="['content_right', { content_right_dark: isDark}]">
                 <h1 :class="['right_title', {right_title_dark: isDark}]"> {{ $t('presentation.next') }}</h1>
@@ -95,10 +98,8 @@
             </div>
         </div>
         <Techno/>
-        <Transition>
-            <Projects id="projects"/>
-        </Transition>
-        <Footer/>
+        <Projects id="projects"/>
+        <Footer id="footer"/>
     </div>   
 </template>
 
@@ -158,6 +159,115 @@
                 padding: 2rem;
                 transition: background-color 0.2s linear;
 
+                .buttons {
+                    @include setFlex(flex-start, center);
+                    width: fit-content;
+                    height: auto;
+                    padding: 0; //top&bottom left&right
+
+                    .project {
+                        @include setFlex(flex-start, center);
+                        border: none;
+                        outline: none;
+                        width: fit-content;
+                        height: fit-content;
+                        border: 1px solid $dark;
+                        background-color: $dark;
+                        color: $white;
+                        padding: 0.5rem 1rem;
+                        margin-right: 0.5rem;
+                        transition: all 0.2s linear;
+                        transition-property: background-color, color;
+                        overflow: hidden;
+
+                        &:hover {
+                            background-color: $white;
+                            color: $dark;
+                        }
+                    }
+                    .project_dark {
+                        @include setFlex(flex-start, center);
+                        border: none;
+                        outline: none;
+                        border: 1px solid $white;
+                        background-color: $white;
+                        padding: 0.5rem 1rem;
+                        color: $dark;
+                        transition: all 0.2s linear;
+                        transition-property: background-color, color;
+
+                        &:hover {
+                            color: $white;
+                            background-color: $dark;
+                        }
+                    }
+                    .about {
+                        @include setFlex(flex-start, center);
+                        width: fit-content;
+                        height: fit-content;
+                        padding: 0.75rem 0.25rem;
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        color: $dark;
+                        transition: cursor 0.25s ease-in-out;
+                        font-size: 14px;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 0;
+                            height: 3px;
+                            background-color: $dark;
+                            transition: width 0.25s ease-in-out;
+                        }
+
+                        &:hover::after {
+                            width: 100%;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .about_dark {
+                        @include setFlex(flex-start, center);
+                        width: fit-content;
+                        height: fit-content;
+                        padding: 0.75rem 0.25rem;
+                        margin-left: 0.5rem;
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        color: $white;
+                        transition: cursor 0.25s ease-in-out;
+                        font-size: 14px;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 0;
+                            height: 3px;
+                            background-color: $white;
+                            transition: width 0.25s ease-in-out;
+                        }
+
+                        &:hover::after {
+                            width: 100%;
+                        }
+
+                        &:hover {
+                            color: $white;
+                            background-color: $dark;
+                        }
+                    }
+                }
+
                 .left_title {
                     font-size: 38px;
                     width: 60%;
@@ -172,39 +282,6 @@
                 }
                 .description_dark {
                     color: $white;
-                }
-                .project {
-                    @include setFlex(flex-start, center);
-                    border: none;
-                    outline: none;
-                    width: fit-content;
-                    height: fit-content;
-                    border: 1px solid $dark;
-                    background-color: $dark;
-                    color: $white;
-                    padding: 0.5rem 1rem;
-                    transition: all 0.2s linear;
-                    transition-property: background-color, color;
-                    overflow: hidden;
-                }
-                .project_dark {
-                    @include setFlex(flex-start, center);
-                    border: none;
-                    outline: none;
-                    border: 1px solid $white;
-                    background-color: $white;
-                    padding: 0.5rem 1rem;
-                    color: $dark;
-                    transition: all 0.2s linear;
-                    transition-property: background-color, color;
-                }
-                .project:hover {
-                    background-color: $white;
-                    color: $dark;
-                }
-                .project_dark:hover {
-                    color: $white;
-                    background-color: $dark;
                 }
             }
             .content_left_dark {
@@ -252,6 +329,11 @@
                     padding: 0.5rem 1rem;
                     transition: all 0.2s linear;
                     transition-property: background-color, color;
+
+                    &:hover {
+                        background-color: $dark;
+                        color: $white;
+                    }
                 }
                 .gallery_dark {
                     @include setFlex(flex-start, center);
@@ -263,15 +345,12 @@
                     color: $white;
                     transition: all 0.2s linear;
                     transition-property: background-color, color;
-                }
-                .gallery:hover {
-                    background-color: $dark;
-                    color: $white;
-                }
-                .gallery_dark:hover {
-                    background-color: $white;
-                    color: $dark;
-                }
+
+                    &:hover {
+                        background-color: $white;
+                        color: $dark;
+                    }
+                }         
             }
             .content_right_dark {
                 background-color: $white;
@@ -334,9 +413,10 @@
                         -webkit-filter: invert(100%);
                         mix-blend-mode: difference;
                         transition: font-size 0.25s ease-in-out, cursor 0.25s ease-in-out;
-                    }
-                    h4:hover{
-                        cursor: pointer;
+
+                        &:hover{
+                            cursor: pointer;
+                        }
                     }
                     /* 
                     i'm not sure yet so i made it a comment for now
@@ -457,7 +537,18 @@
                     width: 100%;
                     height: 100vh;
                     padding-bottom: 10vh;
-                   
+                    
+                    .about {
+                        &::after {
+                            height: 2px;
+                        }
+                    }
+                    .about_dark {
+                        &::after {
+                            height: 2px;
+                        }
+                    }
+
                     .left_title {
                         font-size: 24px;
                         width: 80%;
