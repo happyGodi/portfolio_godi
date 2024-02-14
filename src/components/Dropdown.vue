@@ -77,6 +77,22 @@
                     cursor: pointer;
                     color: $white;
                 }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0%;
+                    left: 0%;
+                    height: 100%;
+                    width: 0%;
+                    background-color: $dark;
+                    color: $white;
+                    transition: width 0.2s linear;
+                    z-index: -1;
+                }
+                &:hover::after {
+                    width: 100%;
+                }
             }
             .list_item_dark {
                 color: $white-low;
@@ -84,25 +100,11 @@
                 &:hover {
                     cursor: pointer;
                     color: $dark;
+                    
                 }
 
                 &::after {
                     background-color: $white;
-                }
-            }
-            .list-item::after {
-                content: '';
-                position: absolute;
-                top: 0%;
-                left: 0%;
-                height: 100%;
-                width: 0%;
-                background-color: $dark;
-                transition: width 0.2s linear;
-                z-index: -1;
-
-                &:hover::after {
-                    width: 100%;
                 }
             }
         }

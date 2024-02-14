@@ -69,24 +69,38 @@
         "title": "Logiciels, langages & outils"
     },
     "project": {
-        "title": "Mes Projets"
+        "title": "Mes Projets",
+        "privacy": "Privée"
     },
     
     "projectList": [
         {
             "name": "Mon Portfolio",
-            "desc": "Un projet pour présenter mes capacités et également mes projets. J'ai crée ce projet en utilisant Vue 3 avec Typescript et SCSS. Les données sont stockés dans des fichiers JSON.",
-            "path": "portfolio.png"
+            "desc": "Un projet pour présenter mes capacités et également mes projets. Les données sont stockés dans des fichiers JSON.",
+            "path": "portfolio.png",
+            "link": "https://github.com/happyGodi/portfolio_godi",
+            "privacy": "false"
         },
         {
             "name": "API d'authentication",
-            "desc": " Il s'agit d'un projet backend lors de ma trosième année universitaire. Un API pour un projet universitaire utilisant JWT, Typescript, NodeJs, Express et MongoDB.",
-            "path": "auth_API.png"
+            "desc": " Il s'agit d'un projet backend lors de ma trosième année universitaire. Un API pour un projet universitaire utilisant JWT.",
+            "path": "auth_API.png",
+            "link": "",
+            "privacy": "true"
         },
         {
             "name": "API To Do",
-            "desc": "Il s'agit d'un API pour une application To Do. Son but est juste d'avoir un API de To Do disponible pour l'apprentissage d'un nouvel framework web. J'ai utilisé NodeJs, ExpressJs, MongoDB et JWT et il est à usage gratuit.",
-            "path": "toDo_API.png"
+            "desc": "Un API pour une application To Do. Son but est juste d'avoir un API de To Do disponible pour l'apprentissage d'un nouvel framework web. Il est à usage gratuit.",
+            "path": "toDo_API.png",
+            "link": "https://github.com/happyGodi/to_do_backend_API",
+            "privacy": "false"
+        },
+        {
+            "name": "Cool animation",
+            "desc": "Petit projet pour le fun et l'entraînement à l'animation avec vanilla Js. Vous pouvez voir le code sur Github.",
+            "path": "Simple_login.png",
+            "link": "https://github.com/happyGodi/Simple_Login_component",
+            "privacy": "false"
         }
     ],
     "technoList": [
