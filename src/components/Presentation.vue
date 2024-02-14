@@ -2,7 +2,6 @@
     import { ref, computed, onMounted } from 'vue';
     import { useDarkModeStore } from '@/stores/darkMode';
     import Card from './Card.vue';
-    import { RouterLink } from 'vue-router';
     import Footer from './Footer.vue'
     import Techno from './Techno.vue'
     import Navbar from './Navbar.vue';

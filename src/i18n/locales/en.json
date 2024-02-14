@@ -69,23 +69,38 @@
         "title": "Software, languages & tools"
     },
     "project": {
-        "title": "My Projects"
+        "title": "My Projects",
+        "privacy": "Private"
     },
     "projectList": [
         {
             "name": "My Portfolio",
-            "desc": "A project to showcase my skill and showcase my projects. I have made it using Vue 3 with typescript and SCSS. The data are stored in JSON files.",
-            "path": "portfolio.png"
+            "desc": "A project to showcase my skill and showcase my projects. The data are stored in JSON files.",
+            "path": "portfolio.png",
+            "link": "https://github.com/happyGodi/portfolio_godi",
+            "privacy": "false"
         },
         {
             "name": "Authentication API",
-            "desc": "This is mostly a backend project i made in my third year of college. An API for a college project made using JWT, Typescript, NodeJs, ExpressJs and MongoDb.",
-            "path": "auth_API.png"
+            "desc": "This is mostly a backend project i made in my third year of college. An API for a college project made using JWT.",
+            "path": "auth_API.png",
+            "link": "",
+            "privacy": "true"
+
         },
         {
             "name": "To Do API",
-            "desc": "This is an API for To Do app. It was basically created for learning a new web framework with a backend that uses MongoDb, Express, JWT and NodeJs. It is free to use.",
-            "path": "toDo_API.png"
+            "desc": "This is an API for To Do app. It was basically created for learning a new web framework with a backend. It is free to use.",
+            "path": "toDo_API.png",
+            "link": "https://github.com/happyGodi/to_do_backend_API",
+            "privacy": "false"
+        },
+        {
+            "name": "Cool animation",
+            "desc": "This is a little fun project made for fun and training on animation using vanilla Js. Try it, you can check it on Github",
+            "path": "Simple_login.png",
+            "link": "https://github.com/happyGodi/Simple_Login_component",
+            "privacy": "false"
         }
     ],
     "technoList": [
