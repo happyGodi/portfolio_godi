@@ -1,17 +1,28 @@
 <script setup lang="ts">
+    import { ref } from 'vue';
+
+    let active = ref(false)
+    let currentId = ref(null)
+    function hovering(id: any): void {
+        active.value = true
+        currentId.value = id
+    }
+    function notHover() {
+        active.value = false
+    }
 </script>
 
 <template>
     <div class="techno">
         <h1 class="title">{{ $t('techno.title') }}</h1>       
         <ul class="tech_list" v-for="(t, index) in $tm('technoList')" :key="index">
-            <li :class="['tech_el', { tech_el_even : ((index % 2) != 0)}]">
-            <div class="picture">
-                <img :src="'src/assets/icons/' + $t(`technoList.${index}.path`)" :alt="$t(`technoList.${index}.name`)">
-            </div>
-            <div :class="['box', { box_even : ((index % 2) != 0)}]">
-                <a :href="$t(`technoList.${index}.link`)" target="_blank" class="link">Read<br>docs?</a>
-            </div>
+            <li :class="['tech_el', { tech_el_even : ((index % 2) != 0)},  { shrink : (active && (currentId != index))}, { grow : (active && (currentId == index))}]"  @mouseenter="hovering(index)" @mouseleave="notHover()">
+                <div class="picture">
+                    <img :src="'src/assets/icons/' + $t(`technoList.${index}.path`)" :alt="$t(`technoList.${index}.name`)">
+                </div>
+                <div :class="['box', { box_even : ((index % 2) != 0)}]">
+                    <a :href="$t(`technoList.${index}.link`)" target="_blank" class="link">Read<br>docs?</a>
+                </div>
                 <div class="tech_el_desc">
                     <h4>{{ $t(`technoList.${index}.name`) }}</h4>
                     <p> {{ $t(`technoList.${index}.desc`) }}
@@ -58,6 +69,11 @@
                 box-shadow: 0px 5px 10px $soft-grey;
                 background-color: $dark;
                 color: $white;
+                transition: cursor 0.25s ease-in-out, transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+                &:hover{
+                    cursor: pointer;
+                }
 
                 .box {
                     width: fit-content;
@@ -123,6 +139,14 @@
                         margin: 1rem;
                     }
                 }
+            }
+            .shrink {
+                transform: scale(0.9);
+                filter: grayscale(100%) blur(3px);
+                -webkit-filter: grayscale(100%) blur(3px);
+            }
+            .grow {
+                transform: scale(1.1);
             }
             .tech_el_even {
                 margin-left: auto;
