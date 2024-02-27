@@ -125,6 +125,11 @@
                 .desc {
                     width: 100%;
                     height: 35%;
+                    line-height: 2rem;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    overflow: hidden;
                     padding: 12px;
                     font-size: 18px;
                     text-align: justify;

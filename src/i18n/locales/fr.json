@@ -76,28 +76,21 @@
     "projectList": [
         {
             "name": "Mon Portfolio",
-            "desc": "Un projet pour présenter mes capacités et également mes projets. Les données sont stockés dans des fichiers JSON.",
+            "desc": "Un projet pour présenter mes capacités et également mes projets. Les données sont stockés dans des fichiers JSON. J'ai utilisé VueJs, Typescript, Sass et la composition API.",
             "path": "portfolio.png",
             "link": "https://github.com/happyGodi/portfolio_godi",
             "privacy": "false"
         },
         {
-            "name": "API d'authentication",
-            "desc": " Il s'agit d'un projet backend lors de ma trosième année universitaire. Un API pour un projet universitaire utilisant JWT.",
-            "path": "auth_API.png",
-            "link": "",
-            "privacy": "true"
-        },
-        {
             "name": "API To Do",
-            "desc": "Un API pour une application To Do. Son but est juste d'avoir un API de To Do disponible pour l'apprentissage d'un nouvel framework web. Il est à usage gratuit.",
+            "desc": "Un API pour une application To Do. Son but est juste d'avoir un API de To Do disponible pour l'apprentissage d'un nouvel framework web. Il est à usage gratuit. J'ai utilisé JWT pour l'authentification et MongoDB pour la base de données. Simple tables Users et Tasks. J'ai utilisé Typescript et ExpressJs pour le serveur.",
             "path": "toDo_API.png",
             "link": "https://github.com/happyGodi/to_do_backend_API",
             "privacy": "false"
         },
         {
             "name": "Cool animation",
-            "desc": "Petit projet pour le fun et l'entraînement à l'animation avec vanilla Js. Vous pouvez voir le code sur Github.",
+            "desc": "Petit projet pour le fun avec vanilla Js. Vous pouvez voir le code sur Github.",
             "path": "Simple_login.png",
             "link": "https://github.com/happyGodi/Simple_Login_component",
             "privacy": "false"
@@ -106,93 +99,93 @@
     "technoList": [
         {
             "name": "Vue",
-            "desc": "Vue JS est un framework web puissant et léger avec une bonne prise en main que j'utilise avec la Composition API combiné à Typescript.",
             "link": "https://vuejs.org/",
-            "path": "vue.png"
+            "path": "vue.png",
+            "level": 3
         },
         {
             "name": "TypeScript",
-            "desc": "Généralement, Javascript typé. J'ai commencé à l'utiliser d'abord pour la curiosité mais aussi sa sécurité et sa maintenance.",
             "link": "https://www.typescriptlang.org/docs/",
-            "path": "typescript.png"
+            "path": "typescript.png",
+            "level": 3
         },
         {
             "name": "JavsScript",
-            "desc": "Un des langages de programmation web les plus populaires. Un langage de programmation Orienté Objet qui était mon premier langage.",
             "link": "https://developer.mozilla.org/fr/docs/Web/JavaScript",
-            "path": "javascript.png"
+            "path": "javascript.png",
+            "level": 4
         },
         {
             "name": "Sass/Scss",
-            "desc": "Un preprocesseur de CSS populaire qui offre des possibilités absente dans CSS comme les fonctions, variables, etc... Il peut être très pratique pour de grand projet.",
             "link": "https://sass-lang.com/documentation/",
-            "path": "sass.png"
+            "path": "sass.png",
+            "level": 3
         },
         {
             "name": "Html 5",
-            "desc": "Hypertext Markup Language, Une des base du développement web.",
             "link": "https://developer.mozilla.org/fr/docs/Web/HTML",
-            "path": "html.png"
+            "path": "html.png",
+            "level": 4
         },
         {
             "name": "Css 3",
-            "desc": "Le binôme de HTML5. CSS ou Cascading Style Sheet est un langage de style qui va de paire avec HTML pour obtenir de magnifiques résultat sur son site web.",
             "link": "https://developer.mozilla.org/en-US/docs/Web/CSS",
-            "path": "css.png"
+            "path": "css.png",
+            "level": 4
         },
         {
             "name": "Express Js",
-            "desc": "Express Js est un framework backend minimaliste de NodeJs que j'utilise pour construire des serveur pour des applications.",
             "link": "https://devdocs.io/express/",
-            "path": "express.png"
+            "path": "express.png",
+            "level": 3
         },
         {
             "name": "Node Js",
-            "desc": "Node Js est un environement de développement qui permet l'exécution de Javascript du côté serveur.",
             "link": "https://nodejs.org/docs/latest/api/",
-            "path": "nodeJs.png"
+            "path": "nodeJs.png",
+            "level": 3
         },
         {
             "name": "Less",
-            "desc": "Less est un autre preprocesseur CSS comme SCSS/SASS. Il offre les mêmes fonctionalités à quelques différences près. J'ai appris à l'utiliser durant mon stage en 2023.",
             "link": "https://lesscss.org/",
-            "path": "less.png"
+            "path": "less.png",
+            "level": 2
         },
         {
             "name": "MongoDB",
-            "desc": "Un système de gestion de base de donnée non relationnel. Il permet le stockage de données non-structurées ce qui peut prêter à confusion'.",
             "link": "https://www.mongodb.com/docs/",
-            "path": "mongodb.png"
+            "path": "mongodb.png",
+            "level": 3
         },
         {
             "name": "MySQL",
-            "desc": "A l'opposé de MongoDB, MySQL est un SGBD pour les base de donnée relationnelles. Il s'agit de mon premier SGBD.",
             "link": "https://dev.mysql.com/doc/",
-            "path": "mysql.png"
+            "path": "mysql.png",
+            "level": 3
         },
         {
             "name": "Adobe Photoshop",
-            "desc": "Photoshop est un logiciel de la suite Adobe. Il s'agit d'un logiciel professionnel de traitement d'image. ",
             "link": "https://helpx.adobe.com/photoshop/user-guide.html",
-            "path": "photoshop.png"
+            "path": "photoshop.png",
+            "level": 2
         },
         {
             "name": "Adobe Illustrator",
-            "desc": "Illustrator, comme Photoshop est un logiciel de la suite Adobe mais réservé au design et aux images vectorielles.",
             "link": "https://helpx.adobe.com/illustrator/user-guide.html",
-            "path": "illustrator.png"
+            "path": "illustrator.png",
+            "level": 3
         },
         {
             "name": "Clip Studio Paint",
-            "desc": "Clip Studio Paint est un logiciel de dessin dédié qui est l'un des plus populaire et complet sur le marché.",
             "link": "https://help.clip-studio.com/en-us/First_Topic.html",
-            "path": "csp.png"
+            "path": "csp.png",
+            "level": 3
         },
         {
             "name": "MedibangPaint Pro",
-            "desc": "MedibangPaint Pro est un autre logiciel de dessin dédié. Il est gratuit et suffisament complet pour obtenir de très beaux résultats.",
             "link": "https://medibangpaint.com/en/",
-            "path": "medibangpaint.png"
+            "path": "medibangpaint.png",
+            "level": 4
         }
     ]
 }
